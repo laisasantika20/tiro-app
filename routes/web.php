@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,8 @@ Route::middleware([
         return view('admin.index');
     })->name('dashboard');
 });
+
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 Route::get('/inputtiket', function () {
     return view('backend.input_tiket');
