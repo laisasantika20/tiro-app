@@ -44,12 +44,12 @@
                                     <form class="user" method= "POST" action ="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" value="{{ __('Email') }}" class="form-control form-control-user"
-                                                id="email" aria-describedby="emailHelp" name="email"
+                                            <input type="email"  class="form-control form-control-user"
+                                                id="email" name="email"
                                                 placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" value="{{ __('Password') }}" name="password" class="form-control form-control-user"
+                                            <input type="password" name="password" class="form-control form-control-user"
                                                 id="password" placeholder="Password">
                                         </div>
                                         

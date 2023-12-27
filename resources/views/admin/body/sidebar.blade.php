@@ -52,9 +52,27 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/datatiket">
+    <a class="nav-link" href="{{route('data_tiket.view')}}">
         <i class="fas fa-fw fa-folder"></i>
         <span>Data Tiket</span>
+    </a>
+</li>
+
+<div class="sidebar-heading">
+    User
+</div>
+
+<li class="nav-item">
+    <a class="nav-link" href="#">
+        <i class="fas fa-fw fa-user-plus"></i>
+        <span>Tambah User</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{route('user.view')}}">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Data User</span>
     </a>
 </li>
 
