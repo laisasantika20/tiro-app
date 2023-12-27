@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\AdminController;
+use App\Http\Controllers\Backend\TiketController;
+use App\Http\Controllers\Backend\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +35,13 @@ Route::get('/inputtiket', function () {
     return view('backend.input_tiket');
 });
 
-Route::get('/datatiket', function () {
-    return view('backend.data_tiket');
-});
+// Route::get('/datatiket', function () {
+//     return view('backend.data_tiket');
+// });
+
+//semua route untuk data tiket
+Route::get('/view', [TiketController::class, 'tiketView'])->name('data_tiket.view');
+
+
+//semua route untuk user
+Route::get('/user/view', [UserController::class, 'userView'])->name('user.view');
