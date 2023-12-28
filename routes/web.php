@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\AdminController;
+use App\Http\Controllers\Backend\BerandaController;
 use App\Http\Controllers\Backend\TiketController;
 use App\Http\Controllers\Backend\UserController;
 /*
@@ -16,7 +17,7 @@ use App\Http\Controllers\Backend\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware([
@@ -39,9 +40,20 @@ Route::get('/inputtiket', function () {
 //     return view('backend.data_tiket');
 // });
 
+
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/dashboard', [BerandaController::class, 'beranda'])->name('dashboard');
+});
+
 //semua route untuk data tiket
 Route::get('/view', [TiketController::class, 'tiketView'])->name('data_tiket.view');
 
 
 //semua route untuk user
-Route::get('/user/view', [UserController::class, 'userView'])->name('user.view');
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/user/view', [UserController::class, 'UserView'])->name('user.view');
+    Route::get('/user/add', [UserController::class, 'UserAdd'])->name('user.add');
+    Route::post('/users/store', [UserController::class, 'UserStore'])->name('users.store');
+    Route::get('/user/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
+    Route::post('/users/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
+});
