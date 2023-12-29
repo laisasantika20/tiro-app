@@ -40,7 +40,7 @@
                                 <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning" title="Ubah">
                                     <i class="fas fa-fw fa-edit"></i>
                                 </a>
-                                <a href="#" class="btn btn-danger" id="delete">
+                                <a href="{{route('users.delete', $user->id)}}" class="btn btn-danger" id="delete">
                                     <i class="fas fa-fw fa-trash"></i>
                                 </a>
                             </td>

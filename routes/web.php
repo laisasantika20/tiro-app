@@ -53,7 +53,8 @@ Route::get('/view', [TiketController::class, 'tiketView'])->name('data_tiket.vie
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/user/view', [UserController::class, 'UserView'])->name('user.view');
     Route::get('/user/add', [UserController::class, 'UserAdd'])->name('user.add');
-    Route::post('/users/store', [UserController::class, 'UserStore'])->name('users.store');
+    Route::post('/user/store', [UserController::class, 'UserStore'])->name('users.store');
     Route::get('/user/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
-    Route::post('/users/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
+    Route::post('/user/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
+    Route::get('/user/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
 });

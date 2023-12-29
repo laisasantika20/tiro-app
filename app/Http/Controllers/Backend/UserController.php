@@ -51,7 +51,7 @@ class UserController extends Controller
     public function UserUpdate (Request $request, $id) {
         // dd($request);
         $validateData=$request->validate([
-            'email' => 'required|unique:users',
+            'email' => 'required',
             'textNama' => 'required',
         ]);
 
@@ -66,5 +66,14 @@ class UserController extends Controller
 
             return redirect()->route('user.view')->with('message','Berhasil edit User');
        
+    }
+
+    public function UserDelete($id){
+        // dd('berhasil masuk controller user edit');
+        $deleteData = User::find($id);
+
+        $deleteData->delete();
+
+        return redirect()->route('user.view')->with('message','Berhasil Menghapus User');
     }
 }
