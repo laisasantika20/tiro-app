@@ -14,23 +14,38 @@
                 </div>
                 <br>
                 <div>
-                    <a href="#" class="btn btn-success mb-3">
+                    <a href="{{route('user.add')}}" class="btn btn-success mb-3">
                         <i class="fas fa-plus"></i> Tambah User
                     </a>
-                    <a href="#" class="btn btn-primary mb-3">Kembali</a>
+                    <a href="{{route('dashboard')}}" class="btn btn-primary mb-3">Kembali</a>
                 </div>
                 <table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Alamat</th>
+                            <th>NPR</th>
                             <th>Email</th>
-                            <th>No. WA</th>
                             <th>Role</th>
-                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
+                        @foreach($allDataUser as $key => $user)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->npr}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->usertype}}</td>
+                            <td>
+                                <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning" title="Ubah">
+                                    <i class="fas fa-fw fa-edit"></i>
+                                </a>
+                                <a href="{{route('users.delete', $user->id)}}" class="btn btn-danger" id="delete">
+                                    <i class="fas fa-fw fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
                     </thead>
                 </table>
             </div>
