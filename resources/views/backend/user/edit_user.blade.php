@@ -34,7 +34,7 @@
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" value="{{$editData->usertype}}" name="selectuser"
                         aria-label="Default select example">
-                        <option selected>PILIH ROLE</option>
+                        <option value="">Pilih Role</option>
                         <option value="admin" {{($editData->usertype=="admin"? "selected":"")}}>ADMIN</option>
                         <option value="kasir" {{($editData->usertype=="kasir"? "selected":"")}}>KASIR</option>
                     </select>
@@ -45,7 +45,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">EMAIL : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="email" class="form-control" value="{{$editData->email}}" name="email"
-                        id="exampleFormControlInput1" placeholder="">
+                        id="exampleFormControlInput1"   >
                 </div>
             </div>
 
