@@ -46,9 +46,9 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="/inputtiket">
+    <a class="nav-link" href="{{route('data_tiket.add')}}">
         <i class="fas fa-pen-square"></i>
-        <span>Tiket</span>
+        <span>Input Tiket</span>
     </a>
 </li>
 <li class="nav-item">
@@ -57,6 +57,8 @@
         <span>Data Tiket</span>
     </a>
 </li>
+
+@if (auth()->user()->usertype=="admin")
 
 <div class="sidebar-heading">
     User
@@ -78,6 +80,7 @@
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
+@endif
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
