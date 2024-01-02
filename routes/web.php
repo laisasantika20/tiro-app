@@ -32,25 +32,24 @@ Route::middleware([
 
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-Route::get('/inputtiket', function () {
-    return view('backend.input_tiket');
-});
-
-// Route::get('/datatiket', function () {
-//     return view('backend.data_tiket');
-// });
-
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', [BerandaController::class, 'beranda'])->name('dashboard');
 });
 
 //semua route untuk data tiket
-Route::get('/view', [TiketController::class, 'tiketView'])->name('data_tiket.view');
-
+Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function () {
+    Route::get('/data/view', [TiketController::class, 'TiketView'])->name('data_tiket.view');
+    Route::get('/data/add', [TiketController::class, 'TiketAdd'])->name('data_tiket.add');
+    Route::post('/data/store', [TiketController::class, 'TiketStore'])->name('tikets.store');
+    Route::get('/data/edit/{id}', [TiketController::class, 'TiketEdit'])->name('data_tiket.edit');
+    Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
+    Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
+    Route::get('/data/nota', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
+});
 
 //semua route untuk user
-Route::middleware('auth', 'verified')->group(function () {
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
     Route::get('/user/view', [UserController::class, 'UserView'])->name('user.view');
     Route::get('/user/add', [UserController::class, 'UserAdd'])->name('user.add');
     Route::post('/user/store', [UserController::class, 'UserStore'])->name('users.store');
