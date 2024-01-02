@@ -26,6 +26,7 @@
                             <th>Nama</th>
                             <th>NPR</th>
                             <th>Email</th>
+                            <th>Jam Rilis</th>
                             <th>Role</th>
                             <th>Aksi</th>
                         </tr>
@@ -35,6 +36,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->npr}}</td>
                             <td>{{$user->email}}</td>
+                            <td>{{auth()->user()->created_at}}</td>
                             <td>{{$user->usertype}}</td>
                             <td>
                                 <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning" title="Ubah">

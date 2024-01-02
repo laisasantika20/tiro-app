@@ -32,9 +32,9 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ROLE : </label>
                 <div class="col-sm-12 col-md-7">
-                    <select class="form-select" value="{{$editData->usertype}}" name="selectuser"
-                        aria-label="Default select example">
-                        <option value="">Pilih Role</option>
+                    <select class="form-select" name="selectuser"
+                        aria-label="Default select example" placeholder="pilih role">
+                        <option value="">--- Pilih Role User ---</option>
                         <option value="admin" {{($editData->usertype=="admin"? "selected":"")}}>ADMIN</option>
                         <option value="kasir" {{($editData->usertype=="kasir"? "selected":"")}}>KASIR</option>
                     </select>

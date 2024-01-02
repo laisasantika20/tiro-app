@@ -59,8 +59,12 @@
                     <input type="password" name="password" class="form-control">
                 </div>
             </div>
-
-            <button type="submit" class="btn btn-success">Tambah User</button>
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                <div class="col-sm-12 col-md-7">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
