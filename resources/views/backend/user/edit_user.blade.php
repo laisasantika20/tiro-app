@@ -45,7 +45,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">EMAIL : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="email" class="form-control" value="{{$editData->email}}" name="email"
-                        id="exampleFormControlInput1" placeholder="">
+                        id="exampleFormControlInput1"   >
                 </div>
             </div>
 
