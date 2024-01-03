@@ -30,13 +30,20 @@
         </div> -->
 
             <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" value="" name="textNo_Plat" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">JENIS TRUCK : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectjenis">
                         <option selected>PILIH OPSI</option>
-                        <option value="bbm" >Bbm</option>
-                        <option value="pupuk" >Pupuk</option>
-                        <option value="ikan" >Ikan</option>
+                        <option value="bbm"></option>
+                        <option value="pupuk">Pupuk</option>
+                        <option value="ikan">Ikan</option>
                     </select>
                 </div>
             </div>
