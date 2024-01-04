@@ -48,7 +48,7 @@
                             <td>{{$tiket->jenis_truck}}</td>
                             <td>{{$tiket->created_at}}</td>
                             <td>
-                            <a href="{{route('data_tiket.nota')}}" class="btn btn-primary" title="Ubah">
+                            <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">
                                     <i class="fas fa-fw fa-eye"></i>
                                 </a>
                                 <a href="{{route('data_tiket.edit', $tiket->id)}}" class="btn btn-warning" title="Ubah">

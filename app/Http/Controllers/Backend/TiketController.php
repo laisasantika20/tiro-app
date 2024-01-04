@@ -70,8 +70,11 @@ class TiketController extends Controller
         return redirect()->route('data_tiket.view')->with('message','Berhasil Menghapus Tiket');
     }
 
-    public function TiketNota(){
+    public function TiketNota($id)
+    {
+        $id = Tiket::where('id', $id)->first();
+        // dd($id);
 
-        return view('backend.data_tiket.nota');
+        return view('backend.data_tiket.nota', compact('id'));
     }
 }
