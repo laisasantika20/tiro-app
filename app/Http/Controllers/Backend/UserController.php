@@ -33,7 +33,7 @@ class UserController extends Controller
             $data=new User();
             $data->usertype=$request->selectuser;
             $data->name=$request->textNama;
-            $data->npr=$request->textnpr;
+            $data->nrp=$request->textnrp;
             $data->email=$request->email;
             $data->password=bcrypt($request->password);
             $data->save();
@@ -60,7 +60,7 @@ class UserController extends Controller
             $data=User::find($id);
             $data->usertype=$request->selectuser;
             $data->name=$request->textNama;
-            $data->npr=$request->textnpr;
+            $data->nrp=$request->textnrp;
             $data->email=$request->email;
             $data->password=bcrypt($request->password);
             $data->save();

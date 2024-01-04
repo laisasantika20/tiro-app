@@ -22,19 +22,18 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Heading -->
-<div class="sidebar-heading">
+<!-- <div class="sidebar-heading">
     Master Data
-</div>
+</div> -->
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a class="nav-link" href="#"
         aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
         <span>Master</span>
     </a>
-</li>
+</li> -->
 
 <!-- Divider -->
 <hr class="sidebar-divider">

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_truck')->nullable();
+            $table->string('golongan')->nullable();
             $table->string('no_plat')->nullable();
+            $table->string('tujuan')->nullable();
+            $table->string('harga')->nullable();
             $table->timestamps();
         });
     }

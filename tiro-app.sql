@@ -149,7 +149,7 @@ INSERT INTO `tikets` (`id`, `jenis_truck`, `no_plat`, `created_at`, `updated_at`
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `npr` varchar(255) DEFAULT NULL,
+  `nrp` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
@@ -168,7 +168,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `npr`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `usertype`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
+INSERT INTO `users` (`id`, `name`, `nrp`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `usertype`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
 (1, 'oktaviano', NULL, 'oktaviano@gmail.com', NULL, '$2y$10$snrL2V/8IvytVRq1TrPd/Ofkh2IGnPO0MwOzpyhs7GP8xbfawc6Uu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-28 08:36:42', '2023-12-28 19:46:19'),
 (13, 'admin1', '123456', 'admin1@gmail.com', NULL, '$2y$10$.kPzbVl0OAboa/pvyoQQbOacbef0tv8J6U8YXGGJbr1v4PNNV0UjS', NULL, NULL, NULL, 'admin', NULL, NULL, NULL, '2023-12-29 01:34:49', '2023-12-30 00:08:11'),
 (14, 'kasir1', '1234566', 'kasir1@gmail.com', NULL, '$2y$10$9yTacExW6.ODf1drJnF3T.jTV9TOv/P8el19N1hQh/Tt2SzbLVEZW', NULL, NULL, NULL, 'kasir', NULL, NULL, NULL, '2023-12-30 05:13:09', '2023-12-30 00:20:03'),
