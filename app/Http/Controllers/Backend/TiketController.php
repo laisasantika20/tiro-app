@@ -25,13 +25,15 @@ class TiketController extends Controller
         // dd($request);
         $validateData=$request->validate([
             'textNo_Plat' => 'required',
-            'selectjenis' => 'required',
+            'selectgolongan' => 'required',
         ]);
 
             // dd($request);
             $data=new Tiket();
             $data->no_plat=$request->textNo_Plat;
-            $data->jenis_truck=$request->selectjenis;
+            $data->golongan=$request->selectgolongan;
+            $data->tujuan=$request->textTujuan;
+            $data->harga=$request->textHarga;
             $data->save();
 
             return redirect()->route('data_tiket.view')->with('message','Berhasil');
@@ -54,7 +56,9 @@ class TiketController extends Controller
            // dd($request);
            $data=Tiket::find($id);
            $data->no_plat=$request->textNo_Plat;
-           $data->jenis_truck=$request->selectjenis;
+           $data->golongan=$request->selectgolongan;
+           $data->tujuan=$request->textTujuan;
+           $data->harga=$request->textHarga;
            $data->save();
 
            return redirect()->route('data_tiket.view')->with('message','Berhasil Edit Tiket');

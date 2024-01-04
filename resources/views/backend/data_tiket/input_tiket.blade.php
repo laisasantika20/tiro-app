@@ -19,41 +19,32 @@
                 </div>
             </div>
 
-            <!-- <div class="form-group row mb-4">
-            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">TUJUAN : </label>
-            <div class="col-sm-12 col-md-7">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>PILIH OPSI</option>
-                    <option value="1">LOMBOK</option>
-                </select>
-            </div>
-        </div> -->
-
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">JENIS TRUCK : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                 <div class="col-sm-12 col-md-7">
-                    <select class="form-select" aria-label="Default select example" name="selectjenis">
+                    <select class="form-select" aria-label="Default select example" name="selectgolongan">
                         <option selected>PILIH OPSI</option>
-                        <option value="bbm" >Bbm</option>
-                        <option value="pupuk" >Pupuk</option>
-                        <option value="ikan" >Ikan</option>
+                        <option value="golongan I">Golongan I</option>
+                        <option value="golongan II">Golongan II</option>
+                        <option value="golongan III">Golongan III</option>
                     </select>
                 </div>
             </div>
 
-            <!-- <div class="form-group row mb-4">
-            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">TANGGAL :</label>
-            <div class="col-sm-12 col-md-7">
-                <input type="date" name="tanggal" class="form-control">
-            </div>
-        </div>
 
-        <div class="form-group row mb-4">
-            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">JAM :</label>
-            <div class="col-sm-12 col-md-7">
-                <input type="time" name="tanggal" class="form-control">
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" value="lembar" name="textTujuan" placeholder="">
+                </div>
             </div>
-        </div> -->
+
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" value="4000000" name="textHarga" placeholder="">
+                </div>
+            </div>
 
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>

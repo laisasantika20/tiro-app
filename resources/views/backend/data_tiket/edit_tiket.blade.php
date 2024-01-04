@@ -24,14 +24,33 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">JENIS TRUCK : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan Truck : </label>
                 <div class="col-sm-12 col-md-7">
-                    <select class="form-select" aria-label="Default select example" name="selectjenis">
+                    <select class="form-select" aria-label="Default select example" name="selectgolongan">
                         <option selected>PILIH OPSI</option>
-                        <option value="bbm" {{($editData->jenis_truck=="bbm"? "selected":"")}}>Bbm</option>
-                        <option value="pupuk" {{($editData->jenis_truck=="pupuk"? "selected":"")}}>Pupuk</option>
-                        <option value="ikan" {{($editData->jenis_truck=="ikan"? "selected":"")}}>Ikan</option>
+                        <option value="golongan I" {{($editData->jenis_truck=="golongan I"? "selected":"")}}>Golongan I
+                        </option>
+                        <option value="golongab II" {{($editData->jenis_truck=="golongan II"? "selected":"")}}>Golongan
+                            II</option>
+                        <option value="golongan III" {{($editData->jenis_truck=="golongan III"? "selected":"")}}>
+                            Golongan III</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" name="textTujuan" value="{{$editData->tujuan}}"
+                        placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" name="textHarga" value="{{$editData->harga}}"
+                        placeholder="">
                 </div>
             </div>
 

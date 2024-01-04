@@ -23,10 +23,12 @@
             <div class="table-responsive table-striped">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
+                    <tr>
                             <th>No</th>
                             <th>No PLat</th>
-                            <th>Jenis Truck</th>
+                            <th>Golongan Truck</th>
+                            <th>Tujuan</th>
+                            <th>Harga</th>
                             <th>Tanggal Jam</th>
                             <th>AKSI</th>
                         </tr>
@@ -35,7 +37,9 @@
                         <tr>
                             <th>No</th>
                             <th>No PLat</th>
-                            <th>Jenis Truck</th>
+                            <th>Golongan Truck</th>
+                            <th>Tujuan</th>
+                            <th>Harga</th>
                             <th>Tanggal Jam</th>
                             <th>AKSI</th>
                         </tr>
@@ -45,7 +49,9 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$tiket->no_plat}}</td>
-                            <td>{{$tiket->jenis_truck}}</td>
+                            <td>{{$tiket->golongan}}</td>
+                            <td>{{$tiket->tujuan}}</td>
+                            <td>{{$tiket->harga}}</td>
                             <td>{{$tiket->created_at}}</td>
                             <td>
                             <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">

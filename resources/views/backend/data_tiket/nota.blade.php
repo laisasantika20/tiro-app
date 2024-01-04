@@ -1,60 +1,100 @@
-@extends('admin.index_master')
-@section('admin')
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        ul 
-        ul li {
-            display: block;
-        }
-        hr {
-            border-style:dashed;
-        }
-    </style>
-</head>
-<body>
-    
-    <div class="container">
-        <div class="header" style="margin-bottom: 30px;">
-            <h3>Tiket Roro</h3>
-            <p>Alamat Toko</p>
+<div class="container mt-5 mb-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="d-flex flex-row p-2"> <img src="https://i.imgur.com/vzlPPh3.png" width="48">
+                    <div class="d-flex flex-column"> <span class="font-weight-bold">Tax Invoice</span>
+                        <small>INV-001</small>
+                    </div>
+                </div>
+                <hr>
+                <div class="table-responsive p-2">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="add">
+                                <td>To</td>
+                                <td>From</td>
+                            </tr>
+                            <tr class="content">
+                                <td class="font-weight-bold">Google <br>Attn: John Smith Pymont <br>Australia</td>
+                                <td class="font-weight-bold">Facebook <br> Attn: John Right Polymont <br> USA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <div class="products p-2">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="add">
+                                <td>Description</td>
+                                <td>Days</td>
+                                <td>Price</td>
+                                <td class="text-center">Total</td>
+                            </tr>
+                            <tr class="content">
+                                <td>Website Redesign</td>
+                                <td>15</td>
+                                <td>$1,500</td>
+                                <td class="text-center">$22,500</td>
+                            </tr>
+                            <tr class="content">
+                                <td>Logo & Identity</td>
+                                <td>10</td>
+                                <td>$1,500</td>
+                                <td class="text-center">$15,000</td>
+                            </tr>
+                            <tr class="content">
+                                <td>Marketing Collateral</td>
+                                <td>3</td>
+                                <td>$1,500</td>
+                                <td class="text-center">$4,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <div class="products p-2">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="add">
+                                <td></td>
+                                <td>Subtotal</td>
+                                <td>GST(10%)</td>
+                                <td class="text-center">Total</td>
+                            </tr>
+                            <tr class="content">
+                                <td></td>
+                                <td>$40,000</td>
+                                <td>2,500</td>
+                                <td class="text-center">$42,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <div class="address p-2">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="add">
+                                <td>Bank Details</td>
+                            </tr>
+                            <tr class="content">
+                                <td> Bank Name : ADS BANK <br> Swift Code : ADS1234Q <br> Account Holder : Jelly Pepper
+                                    <br> Account Number : 5454542WQR <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-sm-12 col-md-7">
+                        <button class="btn btn-primary"><a target="_blank" href="#">Submit</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr>
-        <div class="flex-container-1">
-            <div class="left">
-                <ul>
-                    <li>id antrian</li>
-                    <li>Jenis Truk</li>
-                    <li>Tanggal</li>
-                </ul>
-            </div>
-            <div class="right">
-                <ul>
-                    <li> {{ $id->id }} </li>
-                    <li> {{ $id->jenis_truck }} </li>
-                    <li> {{date('Y-m-d : H:i:s', strtotime($id->created_at))}} </li>
-                </ul>
-            </div>
-            </div>
-            </div>
-            <div class="flex-container" style="margin-bottom: 10px; text-align:right;">
-                 <div>nama produk</div>
-                 <div>harga</div>
-            </div>
-            <div class="flex-container" style="text-align: right;">
-            <div>Tiket Roro</div>
-            <div>8000</div>
-            <hr>
-            <div class="header" style="margin-top: 50px;">
-            <h3>Terimakasih</h3>
-            </div>
-</body>
-</html>
+    </div>
+</div>
 
-
-@endsection
+<script type="text/javascript">
+    window.print();
+</script>
