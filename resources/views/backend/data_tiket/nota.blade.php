@@ -86,12 +86,15 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="col-sm-12 col-md-7">
+                        <button class="btn btn-primary"><a target="_blank" href="#">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-window.print();
+<script type="text/javascript">
+    window.print();
 </script>
