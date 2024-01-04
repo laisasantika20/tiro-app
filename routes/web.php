@@ -17,7 +17,7 @@ use App\Http\Controllers\Backend\UserController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('dashboard');
 });
 
 Route::middleware([
