@@ -14,7 +14,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="{{route('dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -22,19 +22,18 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Heading -->
-<div class="sidebar-heading">
+<!-- <div class="sidebar-heading">
     Master Data
-</div>
+</div> -->
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a class="nav-link" href="#"
         aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
         <span>Master</span>
     </a>
-</li>
+</li> -->
 
 <!-- Divider -->
 <hr class="sidebar-divider">
@@ -46,20 +45,41 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="/inputtiket">
+    <a class="nav-link" href="{{route('data_tiket.add')}}">
         <i class="fas fa-pen-square"></i>
-        <span>Tiket</span>
+        <span>Input Tiket</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/datatiket">
+    <a class="nav-link" href="{{route('data_tiket.view')}}">
         <i class="fas fa-fw fa-folder"></i>
         <span>Data Tiket</span>
     </a>
 </li>
 
+@if (auth()->user()->usertype=="admin")
+
+<div class="sidebar-heading">
+    User
+</div>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{route('user.add')}}">
+        <i class="fas fa-fw fa-user-plus"></i>
+        <span>Tambah User</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{route('user.view')}}">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Data User</span>
+    </a>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
+@endif
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
