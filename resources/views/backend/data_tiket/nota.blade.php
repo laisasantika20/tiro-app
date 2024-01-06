@@ -127,5 +127,10 @@
 </body>
 
 <script type="text/javascript">
+<<<<<<< HEAD
 window.print();
 </script>
+=======
+    window.print();
+</script>
+>>>>>>> origin/kezia
