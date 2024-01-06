@@ -16,7 +16,9 @@
                     <a href="{{route('data_tiket.add')}}" class="btn btn-success mb-3">
                         <i class="fas fa-plus"></i> Tambah Tiket
                     </a>
-                    <a href="{{ route('generate.report') }}" class="btn btn-primary mb-3">Generate Report</a>
+
+                    <a href="{{ route('generate.report') }}" class="btn btn-primary mb-3"><i
+                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>

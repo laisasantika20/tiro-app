@@ -11,7 +11,7 @@ class PDFController extends Controller
     public function generatePDF()
     {
         $data = [
-            'greeting' => 'Report Bulanan Tiket RORO',
+            'greeting' => 'Report Tiket RORO',
             'allDataTiket' => Tiket::all(),
         ];
         $pdf = Pdf::loadView('backend.data_tiket.report', $data);

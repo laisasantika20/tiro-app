@@ -20,6 +20,9 @@
         th {
             background-color: #f2f2f2;
         }
+        h1{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
