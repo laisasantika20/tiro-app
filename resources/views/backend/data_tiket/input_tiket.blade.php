@@ -9,6 +9,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Input Tiket RORO</h6>
+            <a href="{{route('dashboard')}}" class="btn btn-primary mb-3">Kembali</a>
         </div>
         <form method="post" action="{{route('tikets.store')}}">
             @csrf

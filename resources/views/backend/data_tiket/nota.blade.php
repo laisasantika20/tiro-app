@@ -99,7 +99,10 @@
                         <div class="products p-2">
                             <table class="table table-borderless">
                                 <tbody>
-                                    ini QR CODE
+                                    <div class="visible-print text-center">
+                                        {!! QrCode::size(100)->generate(Request::url()); !!}
+                                        <p>Scan me to return to the original page.</p>
+                                    </div>
                                 </tbody>
                             </table>
                         </div>
@@ -127,10 +130,5 @@
 </body>
 
 <script type="text/javascript">
-<<<<<<< HEAD
 window.print();
 </script>
-=======
-    window.print();
-</script>
->>>>>>> origin/kezia
