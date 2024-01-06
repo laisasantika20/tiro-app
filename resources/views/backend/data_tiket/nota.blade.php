@@ -5,9 +5,11 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="d-flex flex-row p-2">
-                        <center><img src="https://i.imgur.com/vzlPPh3.png" width="48"> </center>
+                        <center><img src="https://i.ibb.co/Wg0WPCv/tagline-new.png" width="150"> </center><br>
                         <div class="d-flex flex-column"> <span class="font-weight-bold">
-                                <center>Tiket Roro</center>
+                                <center><b>PEMBAYARAN TIKET RORO<br>
+                                PELABUHAN TANJUNG WANGI <br>
+                                Jl. Raya Situbondo, Ketapang, Banyuwangi</b></center>
                             </span>
                         </div>
                     </div>
@@ -101,7 +103,7 @@
                                 <tbody>
                                     <div class="visible-print text-center">
                                         {!! QrCode::size(100)->generate(Request::url()); !!}
-                                        <p>Scan me to return to the original page.</p>
+                                        <p><b>SCAN ME<b></p>
                                     </div>
                                 </tbody>
                             </table>
@@ -117,8 +119,9 @@
                         <div class="products p-2">
                             <table class="table table-borderless">
                                 <tbody>
-                                    Sudah membeli tiket, Hati hati di jalan
+                                    Hati - Hati di Jalan
                                 </tbody>
+                                <h5>Berlaku untuk sekali masuk</h5>
                             </table>
                         </div>
                     </center>
