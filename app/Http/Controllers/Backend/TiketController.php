@@ -80,5 +80,10 @@ class TiketController extends Controller
     }
     // In your controller
     // view Tiket 
+    public function success()
+    {
+        return view('backend.data_tiket.input_tiket');
+    }
+    }
 
 
