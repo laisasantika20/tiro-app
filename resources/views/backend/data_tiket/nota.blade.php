@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="d-flex flex-row p-2">
-                        <center><img src="https://i.ibb.co/Wg0WPCv/tagline-new.png" width="150"> </center><br>
+                        <center><img src="https://i.ibb.co/tD334rt/Tagline-new.png" width="500"> </center>
                         <div class="d-flex flex-column"> <span class="font-weight-bold">
                                 <center><b>PEMBAYARAN TIKET RORO<br>
                                 PELABUHAN TANJUNG WANGI <br>
