@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <!-- DataTales Example -->
+    <!-- DataTales Example --
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Input Tiket RORO</h6>
@@ -46,12 +46,20 @@
                 </div>
             </div>
 
-            <div class="form-group row mb-4">
+            {{-- <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                 <div class="col-sm-12 col-md-7">
                     <button class="btn btn-primary">Submit</button>
                 </div>
+            </div> --}}
+
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                <div class="col-sm-12 col-md-7">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
+            
         </form>
     </div>
 </div>

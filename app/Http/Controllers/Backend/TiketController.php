@@ -78,4 +78,7 @@ class TiketController extends Controller
 
         return view('backend.data_tiket.nota');
     }
-}
+    // In your controller
+    // view Tiket 
+
+
