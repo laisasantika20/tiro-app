@@ -40,6 +40,10 @@ class TiketController extends Controller
        
     }
 
+    public function CetakNota(){
+        
+    }
+
     public function TiketEdit ($id){
             
         $editData=Tiket::find($id);
@@ -50,7 +54,7 @@ class TiketController extends Controller
         // dd($request);
         $validateData=$request->validate([
             'textNo_Plat' => 'required',
-            'selectjenis' => 'required',
+            'selectgolongan' => 'required',
         ]);
 
            // dd($request);
@@ -74,16 +78,10 @@ class TiketController extends Controller
         return redirect()->route('data_tiket.view')->with('message','Berhasil Menghapus Tiket');
     }
 
-    public function TiketNota(){
+    public function TiketNota($id){
 
-        return view('backend.data_tiket.nota');
+        $lihatNota=Tiket::find($id);
+        return view('backend.data_tiket.nota', compact('lihatNota'));
     }
-    // In your controller
-    // view Tiket 
-    public function success()
-    {
-        return view('backend.data_tiket.input_tiket');
-    }
-    }
-
-
+   
+}

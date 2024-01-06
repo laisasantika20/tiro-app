@@ -19,7 +19,7 @@
                     </a>
                     <a href="{{route('dashboard')}}" class="btn btn-primary mb-3">Kembali</a>
                 </div>
-                <table class="table table-bordered"  width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -29,6 +29,10 @@
                             <th>Role</th>
                             <th>Aksi</th>
                         </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
                         @foreach($allDataUser as $key => $user)
                         <tr>
                             <td>{{$key+1}}</td>
@@ -46,7 +50,7 @@
                             </td>
                         </tr>
                         @endforeach
-                    </thead>
+                    </tbody>
                 </table>
             </div>
         </div>

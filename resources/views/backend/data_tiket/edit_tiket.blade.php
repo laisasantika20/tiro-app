@@ -1,9 +1,6 @@
 @extends('admin.index_master')
 @section('admin')
 
-@extends('admin.index_master')
-@section('admin')
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -11,7 +8,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Input Tiket RORO</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Tiket RORO</h6>
         </div>
         <form method="POST" action="{{route('data_tikets.update', $editData->id )}}">
             @csrf
@@ -28,11 +25,11 @@
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
                         <option selected>PILIH OPSI</option>
-                        <option value="golongan I" {{($editData->jenis_truck=="golongan I"? "selected":"")}}>Golongan I
+                        <option value="golongan I" {{($editData->golongan=="golongan I"? "selected":"")}}>Golongan I
                         </option>
-                        <option value="golongab II" {{($editData->jenis_truck=="golongan II"? "selected":"")}}>Golongan
+                        <option value="golongan II" {{($editData->golongan=="golongan II"? "selected":"")}}>Golongan
                             II</option>
-                        <option value="golongan III" {{($editData->jenis_truck=="golongan III"? "selected":"")}}>
+                        <option value="golongan III" {{($editData->golongan=="golongan III"? "selected":"")}}>
                             Golongan III</option>
                     </select>
                 </div>
@@ -57,13 +54,11 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                 <div class="col-sm-12 col-md-7">
-                    <button class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
-@endsection
 
 @endsection

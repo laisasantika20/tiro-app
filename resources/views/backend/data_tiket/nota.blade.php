@@ -1,100 +1,137 @@
-<div class="container mt-5 mb-3">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="d-flex flex-row p-2"> <img src="https://i.imgur.com/vzlPPh3.png" width="48">
-                    <div class="d-flex flex-column"> <span class="font-weight-bold">Tax Invoice</span>
-                        <small>INV-001</small>
+<body>
+
+    <div class="container mt-5 mb-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="d-flex flex-row p-2">
+                        <center><img src="https://i.ibb.co/Wg0WPCv/tagline-new.png" width="150"> </center><br>
+                        <div class="d-flex flex-column"> <span class="font-weight-bold">
+                                <center><b>PEMBAYARAN TIKET RORO<br>
+                                PELABUHAN TANJUNG WANGI <br>
+                                Jl. Raya Situbondo, Ketapang, Banyuwangi</b></center>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="table-responsive p-2">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr class="add">
-                                <td>To</td>
-                                <td>From</td>
-                            </tr>
-                            <tr class="content">
-                                <td class="font-weight-bold">Google <br>Attn: John Smith Pymont <br>Australia</td>
-                                <td class="font-weight-bold">Facebook <br> Attn: John Right Polymont <br> USA</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <hr>
-                <div class="products p-2">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr class="add">
-                                <td>Description</td>
-                                <td>Days</td>
-                                <td>Price</td>
-                                <td class="text-center">Total</td>
-                            </tr>
-                            <tr class="content">
-                                <td>Website Redesign</td>
-                                <td>15</td>
-                                <td>$1,500</td>
-                                <td class="text-center">$22,500</td>
-                            </tr>
-                            <tr class="content">
-                                <td>Logo & Identity</td>
-                                <td>10</td>
-                                <td>$1,500</td>
-                                <td class="text-center">$15,000</td>
-                            </tr>
-                            <tr class="content">
-                                <td>Marketing Collateral</td>
-                                <td>3</td>
-                                <td>$1,500</td>
-                                <td class="text-center">$4,500</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <hr>
-                <div class="products p-2">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr class="add">
-                                <td></td>
-                                <td>Subtotal</td>
-                                <td>GST(10%)</td>
-                                <td class="text-center">Total</td>
-                            </tr>
-                            <tr class="content">
-                                <td></td>
-                                <td>$40,000</td>
-                                <td>2,500</td>
-                                <td class="text-center">$42,500</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <hr>
-                <div class="address p-2">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr class="add">
-                                <td>Bank Details</td>
-                            </tr>
-                            <tr class="content">
-                                <td> Bank Name : ADS BANK <br> Swift Code : ADS1234Q <br> Account Holder : Jelly Pepper
-                                    <br> Account Number : 5454542WQR <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary"><a target="_blank" href="#">Submit</button>
-                    </div>
+                    <center>
+                        <div>----------------------------------------------------------</div>
+                        @csrf
+                        <div class="products p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr class="add">
+                                        <td>No Plat</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{$lihatNota->no_plat}}</td>
+                                    </tr>
+                                    <tr class="content">
+                                        <td>Golongan</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{$lihatNota->golongan}}</td>
+                                    </tr>
+                                    <tr class="content">
+                                        <td>Tujuan</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{$lihatNota->tujuan}}</td>
+                                    </tr>
+                                    <tr class="content">
+                                        <td>Harga</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{$lihatNota->harga}}</td>
+                                    </tr>
+                                    <tr class="content">
+                                        <td>Jam</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{$lihatNota->created_at}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>----------------------------------------------------------</div>
+                        <div class="products p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <div class="visible-print text-center">
+                                        {!! QrCode::size(100)->generate(Request::url()); !!}
+                                        <p><b>SCAN ME<b></p>
+                                    </div>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>----------------------------------------------------------</div>
+                        <div class="products p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <b>Terimakasih</b>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="products p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    Hati - Hati di Jalan
+                                </tbody>
+                                <h5>Berlaku untuk sekali masuk</h5>
+                            </table>
+                        </div>
+                    </center>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+</body>
 
 <script type="text/javascript">
-    window.print();
+window.print();
 </script>

@@ -28,6 +28,13 @@
                 </div>
             </div>
 
+            <!-- <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NPR : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="{{ date('Y-m-d H:i:s') }}" class="form-control" id="exampleFormControlInput1" name="textnpr" placeholder="">
+                </div>
+            </div> -->
+
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ROLE : </label>
                 <div class="col-sm-12 col-md-7">
@@ -47,7 +54,7 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PASSWORD</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PASSWORD : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="password" name="password" class="form-control">
                 </div>
@@ -55,7 +62,9 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                 <div class="col-sm-12 col-md-7">
-                    <button class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Kirim</button>
+                        <a href="{{route('user.view')}}" class="btn btn-primary">Batal</a>
+
                 </div>
             </div>
         </form>
