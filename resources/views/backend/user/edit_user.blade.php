@@ -57,6 +57,7 @@
             </div>
 
             <button type="submit" class="btn btn-success">Edit User</button>
+            <a href="{{route('user.view')}}" class="btn btn-primary">Batal</a>
         </form>
     </div>
 </div 
