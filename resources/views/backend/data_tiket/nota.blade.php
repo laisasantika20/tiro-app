@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="d-flex flex-row p-2">
-                        <center><img src="https://i.imgur.com/vzlPPh3.png" width="48"> </center>
+                        <center><img src="https://i.ibb.co/tD334rt/Tagline-new.png" width="500"> </center>
                         <div class="d-flex flex-column"> <span class="font-weight-bold">
                                 <center>Tiket Roro</center>
                             </span>
