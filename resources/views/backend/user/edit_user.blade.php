@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PASSWORD</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PASSWORD : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="password" name="password" class="form-control">
                 </div>

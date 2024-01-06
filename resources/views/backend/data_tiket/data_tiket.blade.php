@@ -23,7 +23,7 @@
             <div class="table-responsive table-striped">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                    <tr>
+                        <tr>
                             <th>No</th>
                             <th>No PLat</th>
                             <th>Golongan Truck</th>
@@ -54,13 +54,14 @@
                             <td>{{$tiket->harga}}</td>
                             <td>{{$tiket->created_at}}</td>
                             <td>
-                            <a href="{{route('data_tiket.nota')}}" class="btn btn-primary" title="Ubah">
+                                <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">
                                     <i class="fas fa-fw fa-eye"></i>
                                 </a>
                                 <a href="{{route('data_tiket.edit', $tiket->id)}}" class="btn btn-warning" title="Ubah">
                                     <i class="fas fa-fw fa-edit"></i>
                                 </a>
-                                <a href="{{route('data_tikets.delete', $tiket->id)}}" class="btn btn-danger" id="delete">
+                                <a href="{{route('data_tikets.delete', $tiket->id)}}" class="btn btn-danger"
+                                    id="delete">
                                     <i class="fas fa-fw fa-trash"></i>
                                 </a>
                             </td>
