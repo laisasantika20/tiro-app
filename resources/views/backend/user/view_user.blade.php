@@ -7,17 +7,15 @@
     <!-- Page Heading -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Input Tiket RORO</h6>
+        </div>
         <div class="card-body">
             <div class="table-responsive table-striped">
-                <div>
-                    <h6 class="m-0 font-weight-bold text-primary">Data Tiket RORO</h6>
-                </div>
-                <br>
                 <div>
                     <a href="{{route('user.add')}}" class="btn btn-success mb-3">
                         <i class="fas fa-plus"></i> Tambah User
                     </a>
-                    <a href="{{route('dashboard')}}" class="btn btn-primary mb-3">Kembali</a>
                 </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>

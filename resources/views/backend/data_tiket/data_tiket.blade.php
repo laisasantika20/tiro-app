@@ -7,20 +7,17 @@
     <!-- Page Heading -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-body py-3">
-            <div class="table-responsive table-striped">
+        <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data Tiket RORO</h6>
-            </div>
-            <br>
-            <div>
-                <a href="{{route('data_tiket.add')}}" class="btn btn-success mb-3">
-                    <i class="fas fa-plus"></i> Tambah Tiket
-                </a>
-                <a href="{{route('dashboard')}}" class="btn btn-primary mb-3">Kembali</a>
-            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive table-striped">
+                <div>
+                    <a href="{{route('data_tiket.add')}}" class="btn btn-success mb-3">
+                        <i class="fas fa-plus"></i> Tambah Tiket
+                    </a>
+                    <a href="{{ route('generate.report') }}" class="btn btn-primary mb-3">Generate Report</a>
+                </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -52,7 +49,7 @@
                             <td>{{$tiket->golongan}}</td>
                             <td>{{$tiket->tujuan}}</td>
                             <td>{{$tiket->harga}}</td>
-                            <td>{{$tiket->created_at}}</td>
+                            <td>{{ \Carbon\Carbon::parse($tiket->created_at)->format('d M Y H:i:s') }}</td>
                             <td>
                                 <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">
                                     <i class="fas fa-fw fa-eye"></i>

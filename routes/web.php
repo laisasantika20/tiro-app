@@ -5,6 +5,8 @@ use App\http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BerandaController;
 use App\Http\Controllers\Backend\TiketController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\PDFController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,3 +60,4 @@ Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
     Route::post('/user/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
     Route::get('/user/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
 });
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');

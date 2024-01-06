@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
     <div class="sidebar-brand-icon rotate-n-15">
     <img src="https://iili.io/J5kCpwv.png" style="width : 45px">
     </div>
@@ -35,7 +35,6 @@
 </li> -->
 
 <!-- Divider -->
-<hr class="sidebar-divider">
 
 <!-- Heading -->
 <div class="sidebar-heading">
@@ -58,6 +57,7 @@
 
 @if (auth()->user()->usertype=="admin")
 
+<hr class="sidebar-divider">
 <div class="sidebar-heading">
     User
 </div>
