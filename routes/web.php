@@ -48,6 +48,7 @@ Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function ()
     Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
     Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
     Route::get('/print/{id}', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
+    Route::get('/printNota', [TiketController::class, 'printNota'])->name('nota.print');
     // Route::get('/cetak', [TiketController::class, 'CetakNota'])->name('nota.cetak');
 });
 
@@ -60,4 +61,5 @@ Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
     Route::post('/user/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
     Route::get('/user/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
 });
+
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');

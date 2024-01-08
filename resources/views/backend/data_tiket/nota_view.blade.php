@@ -15,7 +15,7 @@
                     </div>
                     <center>
                         <div>----------------------------------------------------------</div>
-                        @foreach($prinNota as $ticket)
+                        @csrf
                         <div class="products p-2">
                             <table class="table table-borderless">
                                 <tbody>
@@ -32,7 +32,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>{{$ticket->no_plat}}</td>
+                                        <td>{{$lihatNota->no_plat}}</td>
                                     </tr>
                                     <tr class="content">
                                         <td>Golongan</td>
@@ -47,7 +47,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>{{$ticket->golongan}}</td>
+                                        <td>{{$lihatNota->golongan}}</td>
                                     </tr>
                                     <tr class="content">
                                         <td>Tujuan</td>
@@ -62,7 +62,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>{{$ticket->tujuan}}</td>
+                                        <td>{{$lihatNota->tujuan}}</td>
                                     </tr>
                                     <tr class="content">
                                         <td>Harga</td>
@@ -77,7 +77,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>{{$ticket->harga}}</td>
+                                        <td>{{$lihatNota->harga}}</td>
                                     </tr>
                                     <tr class="content">
                                         <td>Jam</td>
@@ -92,7 +92,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>{{$ticket->created_at}}</td>
+                                        <td>{{$lihatNota->created_at}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -124,7 +124,6 @@
                                 <h5>Berlaku untuk sekali masuk</h5>
                             </table>
                         </div>
-                        @endforeach
                     </center>
                 </div>
             </div>

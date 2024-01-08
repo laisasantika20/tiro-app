@@ -36,7 +36,7 @@ class TiketController extends Controller
             $data->harga=$request->textHarga;
             $data->save();
 
-            return redirect()->route('data_tiket.view')->with('message','Berhasil');
+            return redirect()->route('nota.print')->with('message','Berhasil');
        
     }
 
@@ -81,7 +81,13 @@ class TiketController extends Controller
     public function TiketNota($id){
 
         $lihatNota=Tiket::find($id);
-        return view('backend.data_tiket.nota', compact('lihatNota'));
+        return view('backend.data_tiket.nota_view', compact('lihatNota'));
     }
    
+    public function printNota(){
+
+        $prinNota=Tiket::latest()->take(1)->get();
+        return view('backend.data_tiket.nota', compact('prinNota'));
+    }
+
 }
