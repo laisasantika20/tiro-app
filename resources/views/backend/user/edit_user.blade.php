@@ -32,8 +32,8 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ROLE : </label>
                 <div class="col-sm-12 col-md-7">
-                    <select class="form-select" name="selectuser"
-                        aria-label="Default select example" placeholder="pilih role">
+                    <select class="form-select" name="selectuser" aria-label="Default select example"
+                        placeholder="pilih role">
                         <option value="">--- Pilih Role User ---</option>
                         <option value="admin" {{($editData->usertype=="admin"? "selected":"")}}>ADMIN</option>
                         <option value="kasir" {{($editData->usertype=="kasir"? "selected":"")}}>KASIR</option>
@@ -45,7 +45,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">EMAIL : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="email" class="form-control" value="{{$editData->email}}" name="email"
-                        id="exampleFormControlInput1"   >
+                        id="exampleFormControlInput1">
                 </div>
             </div>
 
@@ -56,9 +56,13 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success">Edit User</button>
-            <a href="{{route('user.view')}}" class="btn btn-primary">Batal</a>
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                <div class="col-sm-12 col-md-7">
+                    <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                </div>
+            </div>
+
         </form>
     </div>
-</div 
-@endsection
+</div @endsection
