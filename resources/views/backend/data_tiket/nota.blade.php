@@ -103,7 +103,6 @@
                                 <tbody>
                                     <div class="visible-print text-center">
                                         {!! QrCode::size(100)->generate(Request::url()); !!}
-                                        <p><b>SCAN ME<b></p>
                                     </div>
                                 </tbody>
                             </table>
@@ -112,7 +111,7 @@
                         <div class="products p-2">
                             <table class="table table-borderless">
                                 <tbody>
-                                    <b>Terimakasih</b>
+                                    <b>Terima Kasih</b>
                                 </tbody>
                             </table>
                         </div>
