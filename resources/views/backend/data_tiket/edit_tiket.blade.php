@@ -25,7 +25,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan Truck : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
-                        <option selected>PILIH OPSI</option>
+                        <option value="" disabled selected="selected">PILIH OPSI</option>
                         <option value="golongan I" {{($editData->golongan=="golongan I"? "selected":"")}}>Golongan I
                         </option>
                         <option value="golongan II" {{($editData->golongan=="golongan II"? "selected":"")}}>Golongan

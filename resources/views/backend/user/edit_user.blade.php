@@ -34,7 +34,7 @@
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" name="selectuser" aria-label="Default select example"
                         placeholder="pilih role">
-                        <option value="">--- Pilih Role User ---</option>
+                        <option value="" disabled selected="selected">Pilih Role User</option>
                         <option value="admin" {{($editData->usertype=="admin"? "selected":"")}}>ADMIN</option>
                         <option value="kasir" {{($editData->usertype=="kasir"? "selected":"")}}>KASIR</option>
                     </select>

@@ -31,7 +31,7 @@ class TiketController extends Controller
             // dd($request);
             $data=new Tiket();
             $data->no_plat=$request->textNo_Plat;
-            $data->kd_transaksi=$request->textKd_Transaksi;
+            $data->kd_tiket=$request->textKd_Tiket;
             $data->golongan=$request->selectgolongan;
             $data->tujuan=$request->textTujuan;
             $data->harga=$request->textHarga;

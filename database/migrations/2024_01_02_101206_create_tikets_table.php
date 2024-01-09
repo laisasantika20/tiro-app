@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
-            $table->string('kd_transaksi')->null();
+            $table->string('kd_tiket')->null();
             $table->string('golongan')->nullable();
             $table->string('no_plat')->nullable();
             $table->string('tujuan')->nullable();
