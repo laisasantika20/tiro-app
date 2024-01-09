@@ -14,6 +14,12 @@
         <form method="post" action="{{route('tikets.store')}}">
             @csrf
             <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">KODE TRANSAKSI : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" name="textKd_Transaksi" value="<?php echo("TGWI-".rand(1111,9999));?>" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NO. PLAT : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" name="textNo_Plat" placeholder="">
@@ -24,7 +30,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
-                        <option selected>PILIH OPSI</option>
+                        <option value="" disabled selected="selected">PILIH OPSI</option>
                         <option value="golongan I">Golongan I</option>
                         <option value="golongan II">Golongan II</option>
                         <option value="golongan III">Golongan III</option>
@@ -46,13 +52,6 @@
                     <input type="text" class="form-control" value="4000000" name="textHarga" placeholder="">
                 </div>
             </div>
-
-            {{-- <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                <div class="col-sm-12 col-md-7">
-                    <button class="btn btn-primary">Submit</button>
-                </div>
-            </div> --}}
 
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
