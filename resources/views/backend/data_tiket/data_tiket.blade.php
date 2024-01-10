@@ -26,12 +26,8 @@
                             <th>No</th>
                             <th>Kode Tiket</th>
                             <th>No PLat</th>
-<<<<<<< HEAD
                             <th>Kapal</th>
                             <th>Golongan</th>
-=======
-                            <th>Golongan Truk</th>
->>>>>>> c78644dcd53b53bb131e3deff873f9e4d97da35a
                             <th>Tujuan</th>
                             <th>Harga</th>
                             <th>Tanggal Jam</th>
