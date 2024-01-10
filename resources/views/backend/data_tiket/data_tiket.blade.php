@@ -24,6 +24,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kode Tiket</th>
                             <th>No PLat</th>
                             <th>Golongan Truck</th>
                             <th>Tujuan</th>
@@ -35,6 +36,7 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
+                            <th>Kode Tiket</th>
                             <th>No PLat</th>
                             <th>Golongan Truck</th>
                             <th>Tujuan</th>
@@ -47,6 +49,7 @@
                         @foreach($allDataTiket as $key => $tiket)
                         <tr>
                             <td>{{$key+1}}</td>
+                            <td>{{$tiket->kd_tiket}}</td>
                             <td>{{$tiket->no_plat}}</td>
                             <td>{{$tiket->golongan}}</td>
                             <td>{{$tiket->tujuan}}</td>
