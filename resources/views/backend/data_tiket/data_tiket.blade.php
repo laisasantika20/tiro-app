@@ -26,11 +26,11 @@
                             <th>No</th>
                             <th>Kode Tiket</th>
                             <th>No PLat</th>
-                            <th>Golongan Truck</th>
+                            <th>Golongan Truk</th>
                             <th>Tujuan</th>
                             <th>Harga</th>
                             <th>Tanggal Jam</th>
-                            <th>AKSI</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -38,11 +38,11 @@
                             <th>No</th>
                             <th>Kode Tiket</th>
                             <th>No PLat</th>
-                            <th>Golongan Truck</th>
+                            <th>Golongan Truk</th>
                             <th>Tujuan</th>
                             <th>Harga</th>
                             <th>Tanggal Jam</th>
-                            <th>AKSI</th>
+                            <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -57,14 +57,10 @@
                             <td>{{ \Carbon\Carbon::parse($tiket->created_at)->format('d M Y H:i:s') }}</td>
                             <td>
                                 <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">
-                                    <i class="fas fa-fw fa-eye"></i>
+                                    <i class="fas fa-fw fa-print"></i>
                                 </a>
                                 <a href="{{route('data_tiket.edit', $tiket->id)}}" class="btn btn-warning" title="Ubah">
                                     <i class="fas fa-fw fa-edit"></i>
-                                </a>
-                                <a href="{{route('data_tikets.delete', $tiket->id)}}" class="btn btn-danger"
-                                    id="delete">
-                                    <i class="fas fa-fw fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
