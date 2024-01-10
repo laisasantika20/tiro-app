@@ -25,9 +25,13 @@
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
                         <option selected>PILIH OPSI</option>
-                        <option value="golongan I">Golongan I</option>
-                        <option value="golongan II">Golongan II</option>
-                        <option value="golongan III">Golongan III</option>
+                        <option value="Gol II - Sepeda,Sepeda Motor (Roda 2 dan Roda 3)">Gol II - Sepeda,Sepeda Motor (Roda 2 dan Roda 3)</option>
+                        <option value="Gol III - Sedan, Minibus, Pick Up">Gol III - Sedan, Minibus, Pick Up</option>
+                        <option value="Gol IV - Truck / Bus Sedang dan Kendaraan Roda 4 Lainnya">Gol IV - Truck / Bus Sedang dan Kendaraan Roda 4 Lainnya</option>
+                        <option value="Gol V - Truck / Bus Besar dan Kendaraan Roda 6 Lainnya">Gol V - Truck / Bus Besar dan Kendaraan Roda 6 Lainnya</option>
+                        <option value="Gol VI - Truck Tronton dan Kendaraan Roda >= 10 Lainnya">Gol VI - Truck Tronton dan Kendaraan Roda >= 10 Lainnya</option>
+                        <option value="Gol VII - Alat Berat dan Sejenisnya">Gol VII - Alat Berat dan Sejenisnya</option>
+                        <option value="Gol VIII - Alat Berat Roda Besi">Gol VIII - Alat Berat Roda Besi</option>
                     </select>
                 </div>
             </div>
