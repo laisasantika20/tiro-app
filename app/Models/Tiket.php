@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tiket extends Model
 {
     use HasFactory;
-    protected $fillable = ['golongan', 'no_plat', 'tujuan', 'harga'];
+    protected $fillable = ['kd_tiket','kapal_id','golongan', 'no_plat', 'tujuan', 'harga'];
+
+    public function kapal () {
+        return $this->belongsTo(Kapal::class);
+    }
 }

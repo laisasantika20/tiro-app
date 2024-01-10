@@ -39,7 +39,7 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ROLE : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" name="selectuser" aria-label="Default select example">
-                        <option selected>PILIH ROLE</option>
+                        <option value="" disabled selected="selected">PILIH ROLE</option>
                         <option value="admin">ADMIN</option>
                         <option value="kasir">KASIR</option>
                     </select>

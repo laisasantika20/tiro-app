@@ -14,6 +14,12 @@
         <form method="post" action="{{route('tikets.store')}}">
             @csrf
             <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">KODE TIKET : </label>
+                <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control" name="textKd_Tiket" value="<?php echo("TWI-".rand(1111,9999));?>" placeholder="" readonly>
+                </div>
+            </div>
+            <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NO. PLAT : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" name="textNo_Plat" placeholder="">
@@ -21,21 +27,29 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pilih Kapal : </label>
                 <div class="col-sm-12 col-md-7">
-                    <select class="form-select" aria-label="Default select example" name="selectgolongan">
-                        <option selected>PILIH OPSI</option>
-                        <option value="Gol II - Sepeda,Sepeda Motor (Roda 2 dan Roda 3)">Gol II - Sepeda,Sepeda Motor (Roda 2 dan Roda 3)</option>
-                        <option value="Gol III - Sedan, Minibus, Pick Up">Gol III - Sedan, Minibus, Pick Up</option>
-                        <option value="Gol IV - Truck / Bus Sedang dan Kendaraan Roda 4 Lainnya">Gol IV - Truck / Bus Sedang dan Kendaraan Roda 4 Lainnya</option>
-                        <option value="Gol V - Truck / Bus Besar dan Kendaraan Roda 6 Lainnya">Gol V - Truck / Bus Besar dan Kendaraan Roda 6 Lainnya</option>
-                        <option value="Gol VI - Truck Tronton dan Kendaraan Roda >= 10 Lainnya">Gol VI - Truck Tronton dan Kendaraan Roda >= 10 Lainnya</option>
-                        <option value="Gol VII - Alat Berat dan Sejenisnya">Gol VII - Alat Berat dan Sejenisnya</option>
-                        <option value="Gol VIII - Alat Berat Roda Besi">Gol VIII - Alat Berat Roda Besi</option>
+                    <select class="form-select" aria-label="Default select example" name="jenis_kapal">
+                        <option value="" disabled selected="selected">PILIH KAPAL</option>
+                        @foreach ($kap as $item)
+                        <option value="{{$item->nm_kapal}}">{{$item->nm_kapal}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
 
+
+            <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
+                <div class="col-sm-12 col-md-7">
+                    <select class="form-select" aria-label="Default select example" name="selectgolongan">
+                        <option value="" disabled selected="selected">PILIH OPSI</option>
+                        <option value="golongan I">Golongan I</option>
+                        <option value="golongan II">Golongan II</option>
+                        <option value="golongan III">Golongan III</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
@@ -51,17 +65,11 @@
                 </div>
             </div>
 
-            {{-- <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                <div class="col-sm-12 col-md-7">
-                    <button class="btn btn-primary">Submit</button>
-                </div>
-            </div> --}}
-
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                 <div class="col-sm-12 col-md-7">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <a href="{{route('data_tiket.view')}}" class="btn btn-primary">Batal</a>
                 </div>
             </div>
             
