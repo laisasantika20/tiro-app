@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tikets', function (Blueprint $table) {
+        Schema::create('kapals', function (Blueprint $table) {
             $table->id();
-            $table->string('kd_tiket')->null();
-            $table->string('kapal_id')->nullable();
-            $table->string('golongan')->nullable();
-            $table->string('no_plat')->nullable();
-            $table->string('tujuan')->nullable();
-            $table->string('harga')->nullable();
+            $table->string('nm_kapal')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tikets');
+        Schema::dropIfExists('kapals');
     }
 };

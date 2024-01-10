@@ -42,6 +42,21 @@
                                                         <td>{{$ticket->kd_tiket}}</td>
                                                     </tr>
                                                     <tr class="add">
+                                                        <td>Kapal</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>{{$ticket->kapal_id}}</td>
+                                                    </tr>
+                                                    <tr class="add">
                                                         <td>No Plat</td>
                                                         <td></td>
                                                         <td></td>

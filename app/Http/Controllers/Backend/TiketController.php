@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
+use App\Models\Kapal;
 
 class TiketController extends Controller
 {
@@ -17,8 +18,9 @@ class TiketController extends Controller
     public function TiketAdd () {
 
         // $data['allDataUser']=User::all();
+        $kap = Kapal::all();
         $data['allDataTiket']=Tiket::all();
-        return view ('backend.data_tiket.input_tiket', $data);
+        return view ('backend.data_tiket.input_tiket', compact('data', 'kap'));
     }
 
     public function TiketStore (Request $request) {
@@ -32,23 +34,20 @@ class TiketController extends Controller
             $data=new Tiket();
             $data->no_plat=$request->textNo_Plat;
             $data->kd_tiket=$request->textKd_Tiket;
+            $data->kapal_id=$request->jenis_kapal;
             $data->golongan=$request->selectgolongan;
             $data->tujuan=$request->textTujuan;
             $data->harga=$request->textHarga;
             $data->save();
-
-            return redirect()->route('nota.print')->with('message','Berhasil');
-       
-    }
-
-    public function CetakNota(){
-        
+          
+            return redirect()->route('nota.print')->with('message','Berhasil Tambah Tiket');
     }
 
     public function TiketEdit ($id){
             
+        $kap = Kapal::all();
         $editData=Tiket::find($id);
-        return view('backend.data_tiket.edit_tiket', compact('editData'));
+        return view('backend.data_tiket.edit_tiket', compact('editData', 'kap'));
     }
 
     public function TiketUpdate (Request $request, $id) {
@@ -61,6 +60,7 @@ class TiketController extends Controller
            // dd($request);
            $data=Tiket::find($id);
            $data->no_plat=$request->textNo_Plat;
+           $data->kapal_id=$request->jenis_kapal;
            $data->golongan=$request->selectgolongan;
            $data->tujuan=$request->textTujuan;
            $data->harga=$request->textHarga;

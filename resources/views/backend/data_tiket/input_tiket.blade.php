@@ -27,6 +27,19 @@
             </div>
 
             <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pilih Kapal : </label>
+                <div class="col-sm-12 col-md-7">
+                    <select class="form-select" aria-label="Default select example" name="jenis_kapal">
+                        <option value="" disabled selected="selected">PILIH KAPAL</option>
+                        @foreach ($kap as $item)
+                        <option value="{{$item->nm_kapal}}">{{$item->nm_kapal}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
@@ -37,7 +50,6 @@
                     </select>
                 </div>
             </div>
-
 
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
