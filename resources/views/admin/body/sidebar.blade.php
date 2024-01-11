@@ -75,6 +75,12 @@
         <span>Data User</span>
     </a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="{{route('kapal.index')}}">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Data Kapal</span>
+    </a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

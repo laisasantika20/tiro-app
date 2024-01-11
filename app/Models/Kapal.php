@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Kapal extends Model
 {
     use HasFactory;
-    protected $fillable = ['nm_kapal'];
+    protected $table = 'kapals';
 
+    protected $fillable = [
+        'nm_kapal',
+        'kapasitas',
+    ];
     public function tiket () {
         return $this->hasMany(Tiket::class);
     }

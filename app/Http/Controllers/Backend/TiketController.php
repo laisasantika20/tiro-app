@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\golongan;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
 use App\Models\Kapal;
@@ -19,8 +20,9 @@ class TiketController extends Controller
 
         // $data['allDataUser']=User::all();
         $kap = Kapal::all();
+        $golongans = golongan::all();
         $data['allDataTiket']=Tiket::all();
-        return view ('backend.data_tiket.input_tiket', compact('data', 'kap'));
+        return view ('backend.data_tiket.input_tiket', compact('data', 'kap','golongans'));
     }
 
     public function TiketStore (Request $request) {
