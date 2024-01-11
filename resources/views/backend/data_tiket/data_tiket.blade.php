@@ -31,7 +31,7 @@
                             <th>Tujuan</th>
                             <th>Harga</th>
                             <th>Tanggal Jam</th>
-                            <th>AKSI</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>

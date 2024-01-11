@@ -1,5 +1,4 @@
 <body>
-
     <div class="container mt-5 mb-3">
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
@@ -171,4 +170,5 @@
 
                 <script type="text/javascript">
                     window.print();
+                    // Menunggu selesai mencetak
                 </script>

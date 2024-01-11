@@ -14,13 +14,13 @@
         <form method="post" action="{{route('tikets.store')}}">
             @csrf
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">KODE TIKET : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kode Tiket : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" name="textKd_Tiket" value="<?php echo("TWI-".rand(1111,9999));?>" placeholder="" readonly>
                 </div>
             </div>
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NO. PLAT : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NO. Plat : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" name="textNo_Plat" placeholder="">
                 </div>
@@ -46,9 +46,8 @@
                         <option value="{{$golongan->nama_golongan}}">{{$golongan->nama_golongan}}</option>
                         @endforeach --}}
                         @foreach ($golongans as $golongan)
-                            <option value="{{$golongan->nama_golongan}}" data-harga="{{$golongan->harga}}">
-                                {{$golongan->nama_golongan}}</option>
-                            @endforeach
+                        <option value="{{$golongan->nama_golongan}}">{{$golongan->nama_golongan}}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>
@@ -63,7 +62,7 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
                 <div class="col-sm-12 col-md-7">
-                    <input type="text" class="form-control" value="#" name="textHarga" id="hargaInput" placeholder="">
+                    <input type="text" class="form-control" value="" name="textHarga" id="hargaInput" placeholder="">
                 </div>
             </div>
 
@@ -79,5 +78,4 @@
         </div>
     </div>
 </div>
-
 @endsection
