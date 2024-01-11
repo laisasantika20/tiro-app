@@ -42,9 +42,13 @@
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" aria-label="Default select example" name="selectgolongan">
                         <option value="" disabled selected="selected">PILIH OPSI</option>
-                        @foreach ($golongans as $golongan)
+                        {{-- @foreach ($golongans as $golongan)
                         <option value="{{$golongan->nama_golongan}}">{{$golongan->nama_golongan}}</option>
-                        @endforeach
+                        @endforeach --}}
+                        @foreach ($golongans as $golongan)
+                            <option value="{{$golongan->nama_golongan}}" data-harga="{{$golongan->harga}}">
+                                {{$golongan->nama_golongan}}</option>
+                            @endforeach
                     </select>
                 </div>
             </div>
@@ -59,7 +63,7 @@
             <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
                 <div class="col-sm-12 col-md-7">
-                    <input type="text" class="form-control" value="#" name="textHarga" placeholder="">
+                    <input type="text" class="form-control" value="#" name="textHarga" id="hargaInput" placeholder="">
                 </div>
             </div>
 

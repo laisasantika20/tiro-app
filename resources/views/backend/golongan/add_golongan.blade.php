@@ -11,29 +11,35 @@
             <h6 class="m-0 font-weight-bold text-primary">Input Golongan</h6>
         </div>
         <div class="card-body">
-        <form method="post" action="#">
-            @csrf
-            <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Golongan : </label>
-                <div class="col-sm-12 col-md-7">
-                    <input type="text" class="form-control" name="nm_golongan" placeholder="">
+            <form method="post" action="{{ route('golongan.store') }}">
+                @csrf
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Golongan : </label>
+                    <div class="col-sm-12 col-md-7">
+                        <input type="text" class="form-control" name="nama_golongan" placeholder="">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
-                <div class="col-sm-12 col-md-7">
-                    <input type="text" class="form-control" name="harga" placeholder="">
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi : </label>
+                    <div class="col-sm-12 col-md-7">
+                        <input type="text" class="form-control" name="deskripsi" placeholder="">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                <div class="col-sm-12 col-md-7">
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <a href="#" class="btn btn-primary">Batal</a>
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
+                    <div class="col-sm-12 col-md-7">
+                        <input type="text" class="form-control" name="harga" placeholder="">
+                    </div>
                 </div>
-            </div>
-            
-        </form>
+                
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                    <div class="col-sm-12 col-md-7">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <a href="#" class="btn btn-primary">Batal</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -43,7 +49,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Kapal</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Golongan</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive table-striped">
@@ -51,32 +57,34 @@
                     <thead>
                         <tr>
                             <th>no</th>
-                            <th>nama kapal</th>
-                            <th>kapasitas</th>
+                            <th>nama golongan</th>
+                            <th>Deskripsi</th>
+                            <th>harga</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>
                     </tfoot>
                     <tbody>
-                        @foreach ($kapals as $kapal)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $kapal->nm_kapal }}</td>
-                            <td>{{ $kapal->kapasitas }}</td>
-                            <td>
-                                <a href="{{ route('kapal.edit', $kapal->id) }}" class="btn btn-warning" title="Ubah">
-                                    <i class="fas fa-fw fa-edit"></i>
-                                </a>
-                                <form action="{{ route('kapal.destroy', $kapal->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" id="delete">
-                                        <i class="fas fa-fw fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                        @foreach ($golongans as $golongan)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $golongan->nama_golongan }}</td>
+                                <td>{{ $golongan->deskripsi }}</td>
+                                <td>{{ $golongan->harga }}</td>
+                                <td>
+                                    <a href="{{ route('golongan.edit', $golongan->id) }}" class="btn btn-warning" title="Ubah">
+                                        <i class="fas fa-fw fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('golongan.destroy', $golongan->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" id="delete">
+                                            <i class="fas fa-fw fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

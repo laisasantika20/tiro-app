@@ -5,6 +5,7 @@ use App\http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BerandaController;
 use App\Http\Controllers\Backend\TiketController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\KapalController;
 use App\Http\Controllers\PDFController;
 
@@ -68,3 +69,5 @@ Route::get('/printNota', [TiketController::class, 'printNota'])->name('nota.prin
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');
 //kapal
 Route::resource('kapal', KapalController::class);
+
+Route::resource('golongan', GolonganController::class);

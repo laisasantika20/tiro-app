@@ -16,6 +16,7 @@ return new class extends Migration
        Schema::create('golongan', function (Blueprint $table) {
             $table->id();
             $table->string('nama_golongan');
+            $table->string('deskripsi');
             $table->decimal('harga', 10, 2);
             $table->timestamps();
         });

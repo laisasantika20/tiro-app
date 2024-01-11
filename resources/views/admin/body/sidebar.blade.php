@@ -75,10 +75,25 @@
         <span>Data User</span>
     </a>
 </li>
+{{-- KAPAL --}}
+<hr class="sidebar-divider">
+<div class="sidebar-heading">
+    Kapal
+</div>
 <li class="nav-item">
     <a class="nav-link" href="{{route('kapal.index')}}">
         <i class="fas fa-fw fa-users"></i>
         <span>Data Kapal</span>
+    </a>
+</li>
+<hr class="sidebar-divider">
+<div class="sidebar-heading">
+    Golongan
+</div>
+<li class="nav-item">
+    <a class="nav-link" href="{{route('golongan.index')}}">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Data Golongan</span>
     </a>
 </li>
 
