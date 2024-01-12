@@ -15,4 +15,8 @@ class golongan extends Model
         'deskripsi',
         'harga',
     ];
+
+    public function tiket () {
+        return $this->hasMany(Tiket::class);
+    }
 }
