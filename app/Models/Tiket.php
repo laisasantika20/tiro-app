@@ -11,10 +11,10 @@ class Tiket extends Model
     protected $fillable = ['kd_tiket','kapal_id','golongan', 'no_plat', 'tujuan', 'harga'];
 
     public function kapal () {
-        return $this->belongsTo(Kapal::class);
+        return $this->belongsTo(Kapal::class, 'kapal_id');
     }
 
     public function golongan () {
-        return $this->belongsTo(golongan::class);
+        return $this->belongsTo(golongan::class, 'golongan');
     }
 }

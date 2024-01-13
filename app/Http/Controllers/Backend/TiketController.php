@@ -16,14 +16,15 @@ class TiketController extends Controller
         return view ('backend.data_tiket.data_tiket', $data);
     }
 
-    public function TiketAdd () {
-
-        // $data['allDataUser']=User::all();
+    public function TiketAdd()
+    {
         $kap = Kapal::all();
-        $golongans = golongan::all();
-        $data['allDataTiket']=Tiket::all();
-        return view ('backend.data_tiket.input_tiket', compact('data', 'kap','golongans'));
+        $golongans = Golongan::all(); // Pastikan nama model Golongan sesuai dengan nama sebenarnya
+        $data['allDataTiket'] = Tiket::all();
+
+        return view('backend.data_tiket.input_tiket', compact('data', 'kap', 'golongans'));
     }
+    
 
     public function TiketStore (Request $request) {
         // dd($request);
