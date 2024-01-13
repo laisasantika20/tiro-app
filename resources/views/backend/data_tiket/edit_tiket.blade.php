@@ -34,16 +34,13 @@
                 </div>
 
                 <div class="form-group row mb-4">
-                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan Truck : </label>
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                     <div class="col-sm-12 col-md-7">
                         <select class="form-select" aria-label="Default select example" name="selectgolongan">
-                            <option value="" disabled selected="selected">PILIH OPSI</option>
-                            <option value="golongan I" {{($editData->golongan=="golongan I"? "selected":"")}}>Golongan I
-                            </option>
-                            <option value="golongan II" {{($editData->golongan=="golongan II"? "selected":"")}}>Golongan
-                                II</option>
-                            <option value="golongan III" {{($editData->golongan=="golongan III"? "selected":"")}}>
-                                Golongan III</option>
+                            <option value="" disabled selected="selected">PILIH KAPAL</option>
+                            @foreach($golongans as $golongan)
+                            <option value="{{$golongan->nama_golongan}}" {{($editData->golongan=="$golongan->nama_golongan"? "selected":"")}}>{{$golongan->nama_golongan}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -52,15 +49,19 @@
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
                     <div class="col-sm-12 col-md-7">
                         <input type="text" class="form-control" name="textTujuan" value="{{$editData->tujuan}}"
-                            placeholder="">
+                            placeholder="" readronly>
                     </div>
                 </div>
 
                 <div class="form-group row mb-4">
-                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                     <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control" name="textHarga" value="{{$editData->harga}}"
-                            placeholder="">
+                        <select class="form-select" aria-label="Default select example" name="selectgolongan">
+                            <option value="" disabled selected="selected">PILIH KAPAL</option>
+                            @foreach($golongans as $harga)
+                            <option value="{{$harga->harga}}" {{($editData->harga=="$harga->harga"? "selected":"")}}>{{$harga->harga}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 

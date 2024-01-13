@@ -25,7 +25,8 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <!-- Add this to the head section of your HTML file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-TMfsqrh0l/w7j5qniV2EvELO/zomDdUZit1/J20BUp7pkDqi7St/nA5l44T1Q5lI" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-TMfsqrh0l/w7j5qniV2EvELO/zomDdUZit1/J20BUp7pkDqi7St/nA5l44T1Q5lI" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
@@ -149,6 +150,8 @@
     toastr.warning("{{ session('warning') }}");
     @endif
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </body>
 

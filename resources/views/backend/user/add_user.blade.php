@@ -14,7 +14,7 @@
         <form method="post" action="{{route('users.store')}}">
             @csrf
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NAMA : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="textNama"
                         placeholder="">
@@ -36,7 +36,7 @@
             </div> -->
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ROLE : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">RoleE : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" name="selectuser" aria-label="Default select example">
                         <option value="" disabled selected="selected">PILIH ROLE</option>
@@ -47,14 +47,14 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">EMAIL : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
                 </div>
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PASSWORD : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Password : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="password" name="password" class="form-control">
                 </div>

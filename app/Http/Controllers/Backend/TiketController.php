@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\golongan;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
 use App\Models\Kapal;
@@ -15,30 +16,35 @@ class TiketController extends Controller
         return view ('backend.data_tiket.data_tiket', $data);
     }
 
-    public function TiketAdd () {
-
-        // $data['allDataUser']=User::all();
+    public function TiketAdd()
+    {
         $kap = Kapal::all();
-        $data['allDataTiket']=Tiket::all();
-        return view ('backend.data_tiket.input_tiket', compact('data', 'kap'));
+        $golongans = Golongan::all(); // Pastikan nama model Golongan sesuai dengan nama sebenarnya
+        $data['allDataTiket'] = Tiket::all();
+
+        return view('backend.data_tiket.input_tiket', compact('data', 'kap', 'golongans'));
     }
+    
 
     public function TiketStore (Request $request) {
         // dd($request);
-        $validateData=$request->validate([
+        $validateData = $request->validate([
             'textNo_Plat' => 'required',
             'selectgolongan' => 'required',
         ]);
-
-            // dd($request);
-            $data=new Tiket();
-            $data->no_plat=$request->textNo_Plat;
-            $data->kd_tiket=$request->textKd_Tiket;
-            $data->kapal_id=$request->jenis_kapal;
-            $data->golongan=$request->selectgolongan;
-            $data->tujuan=$request->textTujuan;
-            $data->harga=$request->textHarga;
-            $data->save();
+    
+        // Temukan harga berdasarkan golongan yang dipilih
+        $golongan = golongan::where('nama_golongan', $request->input('selectgolongan'))->first();
+        $harga = $golongan->harga;
+    
+        $data = new Tiket();
+        $data->no_plat = $request->textNo_Plat;
+        $data->kd_tiket =$request->textKd_tiket; // Untuk menghasilkan Kode Tiket baru
+        $data->kapal_id = $request->jenis_kapal;
+        $data->golongan = $request->selectgolongan;
+        $data->tujuan = $request->textTujuan;
+        $data->harga = $harga; // Menggunakan harga yang sudah diambil dari Golongan
+        $data->save();
           
             return redirect()->route('nota.print')->with('message','Berhasil Tambah Tiket');
     }
@@ -46,8 +52,9 @@ class TiketController extends Controller
     public function TiketEdit ($id){
             
         $kap = Kapal::all();
+        $golongans = golongan::all();
         $editData=Tiket::find($id);
-        return view('backend.data_tiket.edit_tiket', compact('editData', 'kap'));
+        return view('backend.data_tiket.edit_tiket', compact('editData', 'kap', 'golongans'));
     }
 
     public function TiketUpdate (Request $request, $id) {

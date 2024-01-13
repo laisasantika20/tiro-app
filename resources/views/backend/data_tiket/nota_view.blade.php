@@ -1,5 +1,4 @@
 <body>
-
     <div class="container mt-5 mb-3">
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
@@ -8,8 +7,8 @@
                         <center><img src="https://i.ibb.co/Wg0WPCv/tagline-new.png" width="150"> </center><br>
                         <div class="d-flex flex-column"> <span class="font-weight-bold">
                                 <center><b>PEMBAYARAN TIKET RORO<br>
-                                PELABUHAN TANJUNG WANGI <br>
-                                Jl. Raya Situbondo, Ketapang, Banyuwangi</b></center>
+                                        PELABUHAN TANJUNG WANGI <br>
+                                        Jl. Raya Situbondo, Ketapang, Banyuwangi</b></center>
                             </span>
                         </div>
                     </div>
@@ -125,6 +124,7 @@
                             </table>
                         </div>
                     </center>
+                    </div>
                 </div>
             </div>
         </div>
