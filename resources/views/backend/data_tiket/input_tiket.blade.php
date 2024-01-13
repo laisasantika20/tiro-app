@@ -42,7 +42,7 @@
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
                     <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control" value="lembar" name="textTujuan" placeholder="">
+                        <input type="text" class="form-control" value="lembar" name="textTujuan" placeholder="" readonly>
                     </div>
                 </div>
 

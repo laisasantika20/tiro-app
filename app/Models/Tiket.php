@@ -15,6 +15,6 @@ class Tiket extends Model
     }
 
     public function golongan () {
-        return $this->belongsTo(Kapal::class);
+        return $this->belongsTo(golongan::class);
     }
 }
