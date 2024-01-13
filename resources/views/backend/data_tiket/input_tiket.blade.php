@@ -17,7 +17,7 @@
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kode Tiket : </label>
                     <div class="col-sm-12 col-md-7">
                         <input type="text" class="form-control" name="textKd_tiket"
-                            value="<?php echo("TWI-".rand(1111,9999));?>"  placeholder="" readonly>
+                            value="<?php echo("TWI-".rand(1111,9999));?>" placeholder="" readonly>
                     </div>
                 </div>
                 <div class="form-group row mb-4">
@@ -42,17 +42,22 @@
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
                     <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control" value="lembar" name="textTujuan" placeholder="" readonly>
+                        <input type="text" class="form-control" value="lembar" name="textTujuan" placeholder=""
+                            readonly>
                     </div>
                 </div>
+
 
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                     <div class="col-sm-12 col-md-7">
-                        <select class="form-select" aria-label="Default select example" name="selectgolongan" id="selectGolongan">
+                        <select class="form-select" aria-label="Default select example" name="selectgolongan"
+                            id="selectGolongan">
                             <option value="" disabled selected="selected">PILIH OPSI</option>
                             @foreach($golongans as $golongan)
-                            <option value="{{$golongan->nama_golongan}}">{{$golongan->nama_golongan}}</option>
+                            <option value="{{ $golongan->nama_golongan }}" data-price="{{ $golongan->harga }}">
+                                {{ $golongan->nama_golongan }}
+                            </option>
                             @endforeach
                         </select>
                     </div>
@@ -61,10 +66,7 @@
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
                     <div class="col-sm-12 col-md-7">
-
-                        <input type="text" class="form-control" name="harga" value="{{ old('harga') ?? '' }}"
-                            readonly>
-
+                        <input type="text" class="form-control" name="harga" id="harga" readonly>
                     </div>
                 </div>
 

@@ -56,6 +56,7 @@ class TiketController extends Controller
         $editData=Tiket::find($id);
         return view('backend.data_tiket.edit_tiket', compact('editData', 'kap', 'golongans'));
     }
+    
 
     public function TiketUpdate (Request $request, $id) {
         // dd($request);
@@ -64,14 +65,20 @@ class TiketController extends Controller
             'selectgolongan' => 'required',
         ]);
 
+
+                // Temukan harga berdasarkan golongan yang dipilih
+                $golongan = golongan::where('nama_golongan', $request->input('selectgolongan'))->first();
+                $harga = $golongan->harga;
+                
            // dd($request);
            $data=Tiket::find($id);
            $data->no_plat=$request->textNo_Plat;
            $data->kapal_id=$request->jenis_kapal;
            $data->golongan=$request->selectgolongan;
            $data->tujuan=$request->textTujuan;
-           $data->harga=$request->textHarga;
+           $data->harga = $harga; // Menggunakan harga yang sudah diambil dari Golongan
            $data->save();
+             
 
            return redirect()->route('data_tiket.view')->with('message','Berhasil Edit Tiket');
        

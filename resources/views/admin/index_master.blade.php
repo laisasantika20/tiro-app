@@ -151,8 +151,25 @@
     @endif
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    // Update price field on category change
+    document.getElementById('selectGolongan').addEventListener('change', function() {
+        var selectedOption = this.options[this.selectedIndex];
+        var price = selectedOption.getAttribute('data-price');
+        document.getElementById('harga').value = price;
+    });
+    </script>
 
+    <script>
+    // Update price field on category change
+    document.getElementById('selectGolongan_edit').addEventListener('change', function() {
+        var selectedOption = this.options[this.selectedIndex];
+        var price = selectedOption.getAttribute('data-price');
+        document.getElementById('harga').value = price;
+    });
+    </script>
+    
 </body>
 
 </html>

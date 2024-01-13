@@ -27,23 +27,13 @@
                         <select class="form-select" aria-label="Default select example" name="jenis_kapal">
                             <option value="" disabled selected="selected">PILIH KAPAL</option>
                             @foreach ($kap as $item)
-                            <option value="{{$item->nm_kapal}}" {{($editData->kapal_id=="$item->nm_kapal"? "selected":"")}}>{{$item->nm_kapal}}</option>
+                            <option value="{{$item->nm_kapal}}"
+                                {{($editData->kapal_id=="$item->nm_kapal"? "selected":"")}}>{{$item->nm_kapal}}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group row mb-4">
-                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
-                    <div class="col-sm-12 col-md-7">
-                        <select class="form-select" aria-label="Default select example" name="selectgolongan">
-                            <option value="" disabled selected="selected">PILIH KAPAL</option>
-                            @foreach($golongans as $golongan)
-                            <option value="{{$golongan->nama_golongan}}" {{($editData->golongan=="$golongan->nama_golongan"? "selected":"")}}>{{$golongan->nama_golongan}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
 
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tujuan : </label>
@@ -56,12 +46,24 @@
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Golongan : </label>
                     <div class="col-sm-12 col-md-7">
-                        <select class="form-select" aria-label="Default select example" name="selectgolongan">
+                        <select class="form-select" aria-label="Default select example" name="selectgolongan"
+                            id="selectGolongan_edit">
                             <option value="" disabled selected="selected">PILIH KAPAL</option>
-                            @foreach($golongans as $harga)
-                            <option value="{{$harga->harga}}" {{($editData->harga=="$harga->harga"? "selected":"")}}>{{$harga->harga}}</option>
+                            @foreach($golongans as $golongan)
+                            <option value="{{ $golongan->nama_golongan }}" data-price="{{ $golongan->harga }}"
+                                {{ $editData->golongan == $golongan->nama_golongan ? 'selected' : '' }}>
+                                {{ $golongan->nama_golongan }}
+                            </option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
+                    <div class="col-sm-12 col-md-7">
+                        <input type="text" class="form-control" name="harga" id="harga" readonly
+                            value="{{ $editData->harga }}">
                     </div>
                 </div>
 
