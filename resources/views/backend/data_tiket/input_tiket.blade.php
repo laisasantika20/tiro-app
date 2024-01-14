@@ -20,6 +20,7 @@
                             value="<?php echo("TWI-".rand(1111,9999));?>" placeholder="" readonly>
                     </div>
                 </div>
+
                 <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NO. Plat : </label>
                     <div class="col-sm-12 col-md-7">
@@ -67,6 +68,14 @@
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga : </label>
                     <div class="col-sm-12 col-md-7">
                         <input type="text" class="form-control" name="harga" id="harga" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Batas Input per Hari :</label>
+                    <div class="col-sm-12 col-md-7">
+                        <input type="number" class="form-control" name="batasan_per_hari"
+                            value="{{ old('batasan_per_hari', 3) }}" min="1" max="10">
                     </div>
                 </div>
 
