@@ -53,7 +53,7 @@ Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function ()
 });
 
 //semua route untuk data tiket
-Route::middleware('auth', 'verified', 'CekLevel:kasir')->group(function () {
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
     Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
     Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
 });

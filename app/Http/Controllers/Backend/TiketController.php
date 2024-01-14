@@ -7,6 +7,7 @@ use App\Models\golongan;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
 use App\Models\Kapal;
+use App\Models\User;
 use Carbon\Carbon;
 
 class TiketController extends Controller
@@ -14,6 +15,7 @@ class TiketController extends Controller
     //
     public function TiketView () {
         $data['allDataTiket']=Tiket::all();
+        // $data_user['allDataUser']=User::all();
         return view ('backend.data_tiket.data_tiket', $data);
     }
 
