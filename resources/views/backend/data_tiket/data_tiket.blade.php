@@ -64,7 +64,7 @@
                                     <i class="fas fa-fw fa-print"></i>
                                 </a>
 
-                                @if(auth()->user()->usertype != 'kasir')
+                                @if(auth()->user()->usertype != 'kasir') <!-- method agar kasir tidak dapat akses edit dan delete-->
                                 <a href="{{route('data_tiket.edit', $tiket->id)}}" class="btn btn-warning" title="Ubah">
                                     <i class="fas fa-fw fa-edit"></i>
                                 </a>
