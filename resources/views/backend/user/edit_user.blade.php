@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NPR : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NRP : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$editData->nrp}}"
                         name="textnrp" placeholder="">

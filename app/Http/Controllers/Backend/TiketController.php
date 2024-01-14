@@ -32,7 +32,6 @@ class TiketController extends Controller
         $validateData = $request->validate([
             'textNo_Plat' => 'required',
             'selectgolongan' => 'required',
-            'batasan_per_hari' => 'required|integer|min:1|max:10',
         ]);
 
         // Pemeriksaan batasan input per hari
@@ -45,12 +44,6 @@ class TiketController extends Controller
                 return redirect()->back()->with('error', 'Anda hanya diperbolehkan menginputkan tiket sebanyak 3 kali per hari.');
             }
         }
-
-        // // Pemeriksaan batasan input total (5 kali)
-        // $totalInputCount = Tiket::count();
-        // if ($totalInputCount >= 3) {
-        //     return redirect()->back()->with('error', 'Anda hanya diperbolehkan menginputkan tiket sebanyak 5 kali.');
-        // }
     
         // Mengambil data harga sesuai golongan yang dipilih
         $golongan = golongan::where('nama_golongan', $request->input('selectgolongan'))->first();
@@ -63,7 +56,6 @@ class TiketController extends Controller
         $data->golongan = $request->selectgolongan;
         $data->tujuan = $request->textTujuan;
         $data->harga = $harga; 
-        $data->batasan_per_hari = $request->batasan_per_hari;
         $data->save();
           
             return redirect()->route('nota.print')->with('message','Berhasil Tambah Tiket');
