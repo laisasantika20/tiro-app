@@ -7,12 +7,15 @@ use App\Models\golongan;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
 use App\Models\Kapal;
+use App\Models\User;
+use Carbon\Carbon;
 
 class TiketController extends Controller
 {
     //
     public function TiketView () {
         $data['allDataTiket']=Tiket::all();
+        // $data_user['allDataUser']=User::all();
         return view ('backend.data_tiket.data_tiket', $data);
     }
 
@@ -32,18 +35,29 @@ class TiketController extends Controller
             'textNo_Plat' => 'required',
             'selectgolongan' => 'required',
         ]);
+
+        // Pemeriksaan batasan input per hari
+        $lastInputDate = Tiket::latest('created_at')->value('created_at');
+        if ($lastInputDate && Carbon::parse($lastInputDate)->isToday()) {
+            $dailyInputCount = Tiket::whereDate('created_at', Carbon::today())->count();
+
+            // Memeriksa apakah sudah mencapai batasan input per hari (5 kali)
+            if ($dailyInputCount >= 3) {
+                return redirect()->back()->with('error', 'Anda hanya diperbolehkan menginputkan tiket sebanyak 3 kali per hari.');
+            }
+        }
     
-        // Temukan harga berdasarkan golongan yang dipilih
+        // Mengambil data harga sesuai golongan yang dipilih
         $golongan = golongan::where('nama_golongan', $request->input('selectgolongan'))->first();
         $harga = $golongan->harga;
     
         $data = new Tiket();
         $data->no_plat = $request->textNo_Plat;
-        $data->kd_tiket =$request->textKd_tiket; // Untuk menghasilkan Kode Tiket baru
+        $data->kd_tiket =$request->textKd_tiket;
         $data->kapal_id = $request->jenis_kapal;
         $data->golongan = $request->selectgolongan;
         $data->tujuan = $request->textTujuan;
-        $data->harga = $harga; // Menggunakan harga yang sudah diambil dari Golongan
+        $data->harga = $harga; 
         $data->save();
           
             return redirect()->route('nota.print')->with('message','Berhasil Tambah Tiket');
@@ -56,6 +70,7 @@ class TiketController extends Controller
         $editData=Tiket::find($id);
         return view('backend.data_tiket.edit_tiket', compact('editData', 'kap', 'golongans'));
     }
+    
 
     public function TiketUpdate (Request $request, $id) {
         // dd($request);
@@ -64,14 +79,20 @@ class TiketController extends Controller
             'selectgolongan' => 'required',
         ]);
 
+
+             // Mengambil data harga sesuai golongan yang dipilih
+            $golongan = golongan::where('nama_golongan', $request->input('selectgolongan'))->first();
+            $harga = $golongan->harga;
+                
            // dd($request);
            $data=Tiket::find($id);
            $data->no_plat=$request->textNo_Plat;
            $data->kapal_id=$request->jenis_kapal;
            $data->golongan=$request->selectgolongan;
            $data->tujuan=$request->textTujuan;
-           $data->harga=$request->textHarga;
+           $data->harga = $harga;
            $data->save();
+             
 
            return redirect()->route('data_tiket.view')->with('message','Berhasil Edit Tiket');
        

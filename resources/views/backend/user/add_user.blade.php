@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NPR : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">NRP : </label>
                 <div class="col-sm-12 col-md-7">
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="textnrp" placeholder="">
                 </div>
@@ -36,7 +36,7 @@
             </div> -->
 
             <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">RoleE : </label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Role : </label>
                 <div class="col-sm-12 col-md-7">
                     <select class="form-select" name="selectuser" aria-label="Default select example">
                         <option value="" disabled selected="selected">PILIH ROLE</option>

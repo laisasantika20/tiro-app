@@ -59,12 +59,21 @@
                             <td>{{$tiket->harga}}</td>
                             <td>{{ \Carbon\Carbon::parse($tiket->created_at)->format('d M Y H:i:s') }}</td>
                             <td>
+                          
                                 <a href="{{route('data_tiket.nota', $tiket->id)}}" class="btn btn-primary" title="Ubah">
                                     <i class="fas fa-fw fa-print"></i>
                                 </a>
+
+                                @if(auth()->user()->usertype != 'kasir') <!-- method agar kasir tidak dapat akses edit dan delete-->
                                 <a href="{{route('data_tiket.edit', $tiket->id)}}" class="btn btn-warning" title="Ubah">
                                     <i class="fas fa-fw fa-edit"></i>
                                 </a>
+                                <a href="{{route('data_tikets.delete', $tiket->id)}}" class="btn btn-danger"
+                                    id="delete">
+                                    <i class="fas fa-fw fa-trash"></i>
+                                </a>
+                                @endif
+
                             </td>
                         </tr>
                         @endforeach

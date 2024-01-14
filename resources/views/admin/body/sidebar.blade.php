@@ -38,7 +38,7 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Addons
+    Tiket
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->

@@ -47,11 +47,15 @@ Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function ()
     Route::get('/data/add', [TiketController::class, 'TiketAdd'])->name('data_tiket.add');
     Route::post('/data/store', [TiketController::class, 'TiketStore'])->name('tikets.store');
     Route::get('/data/edit/{id}', [TiketController::class, 'TiketEdit'])->name('data_tiket.edit');
-    Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
-    Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
     Route::get('/print/{id}', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
 
     // Route::get('/cetak', [TiketController::class, 'CetakNota'])->name('nota.cetak');
+});
+
+//semua route untuk data tiket
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
+    Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
+    Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
 });
 
 //semua route untuk user
