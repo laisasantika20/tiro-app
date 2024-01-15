@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\AdminController;
+use App\Http\Controllers\Backend\BerandaController;
+use App\Http\Controllers\Backend\TiketController;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\GolonganController;
+use App\Http\Controllers\KapalController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware([
@@ -27,10 +34,44 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/inputtiket', function () {
-    return view('backend.input_tiket');
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/dashboard', [BerandaController::class, 'beranda'])->name('dashboard');
 });
 
-Route::get('/datatiket', function () {
-    return view('backend.data_tiket');
+//semua route untuk data tiket
+Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function () {
+    Route::get('/data/view', [TiketController::class, 'TiketView'])->name('data_tiket.view');
+    Route::get('/data/add', [TiketController::class, 'TiketAdd'])->name('data_tiket.add');
+    Route::post('/data/store', [TiketController::class, 'TiketStore'])->name('tikets.store');
+    Route::get('/data/edit/{id}', [TiketController::class, 'TiketEdit'])->name('data_tiket.edit');
+    Route::get('/print/{id}', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
+
+    // Route::get('/cetak', [TiketController::class, 'CetakNota'])->name('nota.cetak');
 });
+
+//semua route untuk data tiket
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
+    Route::post('/data/update/{id}', [TiketController::class, 'TiketUpdate'])->name('data_tikets.update');
+    Route::get('/data/delete/{id}', [TiketController::class, 'TiketDelete'])->name('data_tikets.delete');
+});
+
+//semua route untuk user
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
+    Route::get('/user/view', [UserController::class, 'UserView'])->name('user.view');
+    Route::get('/user/add', [UserController::class, 'UserAdd'])->name('user.add');
+    Route::post('/user/store', [UserController::class, 'UserStore'])->name('users.store');
+    Route::get('/user/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
+    Route::post('/user/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
+    Route::get('/user/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
+});
+
+Route::get('/printNota', [TiketController::class, 'printNota'])->name('nota.print');
+
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');
+//kapal
+Route::resource('kapal', KapalController::class);
+
+Route::resource('golongan', GolonganController::class);
