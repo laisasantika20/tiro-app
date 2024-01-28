@@ -15,17 +15,15 @@ class TiketController extends Controller
     //
     public function TiketView () {
         $data['allDataTiket']=Tiket::all();
-        // $data_user['allDataUser']=User::all();
         return view ('backend.data_tiket.data_tiket', $data);
     }
 
     public function TiketAdd()
     {
-        $kap = Kapal::all();
-        $golongans = Golongan::all(); // Pastikan nama model Golongan sesuai dengan nama sebenarnya
-        $data['allDataTiket'] = Tiket::all();
+        $kap = Kapal::all();//memanggil data yang ada di semua kolom pada tabel kapals
+        $golongans = Golongan::all(); //memanggil data yang ada di semua kolom pada tabel golongan
 
-        return view('backend.data_tiket.input_tiket', compact('data', 'kap', 'golongans'));
+        return view('backend.data_tiket.input_tiket', compact( 'kap', 'golongans'));
     }
     
 
@@ -36,15 +34,11 @@ class TiketController extends Controller
             'selectgolongan' => 'required',
         ]);
 
-        // Pemeriksaan batasan input per hari
-        $lastInputDate = Tiket::latest('created_at')->value('created_at');
-        if ($lastInputDate && Carbon::parse($lastInputDate)->isToday()) {
-            $dailyInputCount = Tiket::whereDate('created_at', Carbon::today())->count();
+        // Mengambil data kapal
+         $kapal = Kapal::where('nm_kapal', $request->input('jenis_kapal'))->first();
 
-            // Memeriksa apakah sudah mencapai batasan input per hari (5 kali)
-            if ($dailyInputCount >= 3) {
-                return redirect()->back()->with('error', 'Anda hanya diperbolehkan menginputkan tiket sebanyak 3 kali per hari.');
-            }
+        if ($kapal->kapasitas <= 0) {
+            return redirect()->back()->with('error', 'Kapasitas kapal habis.');
         }
     
         // Mengambil data harga sesuai golongan yang dipilih
@@ -53,12 +47,19 @@ class TiketController extends Controller
     
         $data = new Tiket();
         $data->no_plat = $request->textNo_Plat;
-        $data->kd_tiket =$request->textKd_tiket;
+        $data->kd_tiket = "TWI-" . rand(1111, 9999);
         $data->kapal_id = $request->jenis_kapal;
         $data->golongan = $request->selectgolongan;
         $data->tujuan = $request->textTujuan;
         $data->harga = $harga; 
         $data->save();
+
+        // Kurangi kapasitas kapal
+        $kapal = Kapal::where('nm_kapal', $request->input('jenis_kapal'))->first();
+         if ($kapal) {
+        $kapal->kapasitas = $kapal->kapasitas - 1;
+        $kapal->save();
+    }
           
             return redirect()->route('nota.print')->with('message','Berhasil Tambah Tiket');
     }

@@ -139,7 +139,8 @@
                             <table class="table table-borderless">
                                 <tbody>
                                     <div class="visible-print text-center">
-                                        {!! QrCode::size(100)->generate(Request::url()); !!}
+                                        {!! QrCode::size(100)->generate(route('nota.print', ['id' =>
+                                        $ticket->kd_tiket])); !!}
                                     </div>
                                 </tbody>
                             </table>
@@ -164,19 +165,18 @@
                     </center>
                 </div>
             </div>
-            <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                <div class="col-sm-12 col-md-7">
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <a href="{{route('data_tiket.view')}}" class="btn btn-primary">Batal</a>
-                </div>
-            </div>
+
         </div>
     </div>
 
 </body>
 
 <script type="text/javascript">
+// Menunggu selesai mencetak sebelum menyembunyikan tombol "Batal"
+// Mencetak secara otomatis saat halaman dimuat
 window.print();
-// Menunggu selesai mencetak
+
+
+// Redirect to the input tiket page after printing
+window.location.href = "{{ route('data_tiket.add') }}";
 </script>

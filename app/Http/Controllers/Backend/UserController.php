@@ -11,15 +11,14 @@ class UserController extends Controller
     //
     public function UserView() {
 
-        $data['allDataUser']=User::all();
-        return view ('backend.user.view_user', $data);
+        $data['allDataUser']=User::all();   // Mengambil semua data dari model User
+        return view ('backend.user.view_user', $data);  // Mengembalikan tampilan (view) 'backend.user.view_user' dengan data yang diambil
         
     }
 
     public function UserAdd () {
 
-        $data['allDataUser']=User::all();
-        return view ('backend.user.add_user', $data);
+        return view ('backend.user.add_user');
     }
 
     public function UserStore (Request $request) {
@@ -43,8 +42,7 @@ class UserController extends Controller
     }
 
     public function UserEdit($id){
-        // dd('berhasil masuk fungsi edit');
-
+       
         $editData= User::find($id);
         return view('backend.user.edit_user', compact('editData'));
     }

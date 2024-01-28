@@ -17,6 +17,6 @@ class golongan extends Model
     ];
 
     public function tiket () {
-        return $this->hasMany(Tiket::class);
+        return $this->belongsTo(Tiket::class);
     }
 }

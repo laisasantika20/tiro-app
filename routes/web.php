@@ -47,10 +47,11 @@ Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function ()
     Route::get('/data/add', [TiketController::class, 'TiketAdd'])->name('data_tiket.add');
     Route::post('/data/store', [TiketController::class, 'TiketStore'])->name('tikets.store');
     Route::get('/data/edit/{id}', [TiketController::class, 'TiketEdit'])->name('data_tiket.edit');
-    Route::get('/print/{id}', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
-
     // Route::get('/cetak', [TiketController::class, 'CetakNota'])->name('nota.cetak');
 });
+
+
+Route::get('/print/{id}', [TiketController::class, 'TiketNota'])->name('data_tiket.nota');
 
 //semua route untuk data tiket
 Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
@@ -70,8 +71,16 @@ Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
 
 Route::get('/printNota', [TiketController::class, 'printNota'])->name('nota.print');
 
-Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');
-//kapal
-Route::resource('kapal', KapalController::class);
+Route::middleware('auth', 'verified', 'CekLevel:admin,kasir')->group(function () {
+Route::get('/form-downlod', [PDFController::class, 'formDownload'])-> name('form.download');   
+Route::post('/generate-pdf', [PDFController::class, 'generatePDF'])-> name('generate.report');
+});
 
+//kapal
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
+Route::resource('kapal', KapalController::class);
+});
+
+Route::middleware('auth', 'verified', 'CekLevel:admin')->group(function () {
 Route::resource('golongan', GolonganController::class);
+});

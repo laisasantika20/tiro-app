@@ -13,11 +13,6 @@ class GolonganController extends Controller
         return view('backend.golongan.add_golongan', compact('golongans'));
     }
 
-    public function create()
-    {
-        return view('admin.golongan.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([

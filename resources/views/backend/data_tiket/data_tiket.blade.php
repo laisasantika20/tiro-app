@@ -17,7 +17,7 @@
                         <i class="fas fa-plus"></i> Tambah Tiket
                     </a>
 
-                    <a href="{{ route('generate.report') }}" class="btn btn-primary mb-3"><i
+                    <a href="{{ route('form.download') }}" class="btn btn-primary mb-3"><i
                         class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
