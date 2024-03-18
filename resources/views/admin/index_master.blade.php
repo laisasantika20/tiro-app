@@ -170,6 +170,28 @@
     });
     </script>
 
+    <script>
+    // Tambahkan event listener untuk menangani perubahan pada dropdown filter kapal
+    document.getElementById('kapal_filter').addEventListener('change', function() {
+        var selectedKapal = this.value; // Dapatkan nilai kapal yang dipilih
+
+        // Loop melalui setiap baris tabel
+        var rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(function(row) {
+            var kapalCell = row.cells[3]; // Kolom ke-4 berisi nama kapal
+            var kapalName = kapalCell.textContent.trim(); // Dapatkan nama kapal dari sel
+
+            // Jika kapal yang dipilih adalah "Semua Kapal" atau nama kapal cocok dengan yang dipilih, tampilkan baris
+            if (selectedKapal === "" || kapalName === selectedKapal) {
+                row.style.display = 'table-row';
+            } else {
+                // Jika tidak, sembunyikan baris
+                row.style.display = 'none';
+            }
+        });
+    });
+    </script>
+
 </body>
 
 </html>
